@@ -2,7 +2,7 @@
 
 ## Mockup
 
-![alt text](https://github.com/SniffyMcTasty/COMP371-Project/blob/master/images/Mockup.png)
+![alt text](https://github.com/SniffyMcTasty/COMP371-Project/blob/main/images/Mockup.png)
 
 ## Objectives
 

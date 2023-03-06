@@ -16,10 +16,7 @@
 
 This objective will be accomplished using the ImGui library to create a user interface: https://github.com/ocornut/imgui
 
-The UI will allow the user to choose any kind of model that is compatible with the ASSIMP library that will be used to load the models: https://github.com/assimp/assimp.
-The base code used for the intergration of models using ASSIMP is from OGLDEV's Youtube tutorial:
-- https://www.youtube.com/watch?v=sP_kiODC25Q
-- https://github.com/emeiri/ogldev/tree/master/tutorial18_youtube
+The UI will allow the user to choose any kind of model that is compatible with the ASSIMP library that will be used to load the models in `.obj` format: https://github.com/tiperiu/COMP371_all/tree/313f6fc0d026d7274f2f98a053728dadad7c42bf/Lab_capsules/capsule3
 
 The UI will also allow the user to load their own shader from the `shaders` folder in the JSON format.
 The option to select the shader will be done during their respective objective, but since objectives are also considered milestones, being able to load shaders from JSON format
@@ -34,3 +31,12 @@ The selector will be changed later into objective 5 into a dropdown menu linked 
 
 This objective refers to how every JSON-formatted shader will allow the user to modify the properties.
 This means that properties subject to change will need to be coded as having an initial value and a range.
+
+## Building
+
+1. Create build folder: mkdir build
+2. cd build
+3. cmake ../
+4. make
+5. ln -s ../assets
+6. ./shader_viewer

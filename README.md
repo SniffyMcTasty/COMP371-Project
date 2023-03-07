@@ -38,7 +38,7 @@ This means that properties subject to change will need to be coded as having an 
 - GLFW: https://www.glfw.org/download.html (point to the `include` folder)
 - GLM: https://glm.g-truc.net/0.9.9/index.html
 
-If using the docker image from https://github.com/tiperiu/COMP371_dockerimage, no need to install dependencies.
+If using the docker image from https://github.com/tiperiu/COMP371_dockerimage, no need to install dependencies. If not, then `CMakeLists.txt` might need to be modified according to the errors you get.
 
 ## Building
 

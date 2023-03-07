@@ -34,8 +34,8 @@ This means that properties subject to change will need to be coded as having an 
 
 ## Dependencies
 
-- GLEW: https://glew.sourceforge.net
-- GLFW: https://www.glfw.org/download.html
+- GLEW: https://glew.sourceforge.net (point to the `include` folder)
+- GLFW: https://www.glfw.org/download.html (point to the `include` folder)
 - GLM: https://glm.g-truc.net/0.9.9/index.html
 
 If using the docker image from https://github.com/tiperiu/COMP371_dockerimage, no need to install dependencies.

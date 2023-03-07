@@ -32,6 +32,14 @@ The selector will be changed later into objective 5 into a dropdown menu linked 
 This objective refers to how every JSON-formatted shader will allow the user to modify the properties.
 This means that properties subject to change will need to be coded as having an initial value and a range.
 
+## Dependencies
+
+- GLEW: https://glew.sourceforge.net
+- GLFW: https://www.glfw.org/download.html
+- GLM: https://glm.g-truc.net/0.9.9/index.html
+
+If using the docker image from https://github.com/tiperiu/COMP371_dockerimage, no need to install dependencies.
+
 ## Building
 
 1. Create build folder: mkdir build

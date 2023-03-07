@@ -7,6 +7,8 @@
 
 #include "Text.h"
 
+#include "ImGui/imgui.h"
+
 using namespace TAPP;
 using namespace std;
 
@@ -22,7 +24,7 @@ int main(int argc, char* argv[]){
     int w = 1024;
     int h = 768;
     
-    std::string name = "OGL Viewer";
+    std::string name = "Shader Viewer";
     
     if(!gapp.initialize(w, h, name)){
         cout<<"Unable to initialize!"<<endl;

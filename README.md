@@ -34,17 +34,8 @@ This means that properties subject to change will need to be coded as having an 
 
 ## Dependencies
 
-- GLEW: https://glew.sourceforge.net (point to the `include` folder)
-- GLFW: https://www.glfw.org/download.html (point to the `include` folder)
-- GLM: https://glm.g-truc.net/0.9.9/index.html
+GLEW, GLFW3 and GLU need to be installed with VcPkg: https://vcpkg.io/en/getting-started.html
+In order to use VcPkg, you need to include its path to your environment variables.
+Make sure your IDE looks towards the installed packages, put `-DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake` as a CMake argument, `[path to vcpkg] being your own path to your VcPkg clone.
 
 If using the docker image from https://github.com/tiperiu/COMP371_dockerimage, no need to install dependencies. If not, then `CMakeLists.txt` might need to be modified according to the errors you get.
-
-## Building
-
-1. Create build folder: mkdir build
-2. cd build
-3. cmake ../
-4. make
-5. ln -s ../assets
-6. ./shader_viewer

@@ -4,7 +4,7 @@ project(shader_viewer)
 
 set(CMAKE_BUILD_TYPE Debug)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 11)
 
 find_package(OpenGL REQUIRED COMPONENTS OpenGL)
 find_package(GLEW REQUIRED)
@@ -30,6 +30,7 @@ add_definitions(
 )
 
 aux_source_directory(src SOURCES)
-add_executable(${PROJECT_NAME} ${SOURCES})
+aux_source_directory(src/ImGui IMGUI_SOURCE)
+add_executable(${PROJECT_NAME} ${SOURCES} ${IMGUI_SOURCE})
 target_link_libraries(${PROJECT_NAME} ${ALL_LIBS})
 

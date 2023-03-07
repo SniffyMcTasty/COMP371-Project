@@ -306,6 +306,9 @@ glfw3_DIR:PATH=F:/Github/vcpkg/installed/x64-windows/share/glfw3
 //The directory containing a CMake configuration file for glm.
 glm_DIR:PATH=F:/Github/vcpkg/installed/x64-windows/share/glm
 
+//The directory containing a CMake configuration file for imgui.
+imgui_DIR:PATH=F:/Github/vcpkg/installed/x64-windows/share/imgui
+
 //Value Computed by CMake
 shader_viewer_BINARY_DIR:STATIC=F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug
 

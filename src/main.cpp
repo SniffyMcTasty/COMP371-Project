@@ -34,6 +34,7 @@ int main(int argc, char* argv[]){
     }
     
     Virtual3DLayer* view = new Virtual3DLayer(512, 384);
+    //Virtual3DLayer* view = new Virtual3DLayer(w, h);
     gapp.m_window.m_layers.push_back(view);
     
     RenderModel* sp = new RenderModel(argv[1]);
@@ -54,12 +55,12 @@ int main(int argc, char* argv[]){
  */   
 
     // Setup ImGui
-    // IMGUI_CHECKVERSION();
-    // ImGui::CreateContext();
-    // ImGuiIO& io = ImGui::GetIO();
-    // ImGui_ImplGlfw_InitForOpenGL(gapp.m_window.m_window, true);
-    // ImGui_ImplOpenGL3_Init();
-    // ImGui::StyleColorsDark();
+//     IMGUI_CHECKVERSION();
+//     ImGui::CreateContext();
+//     ImGuiIO& io = ImGui::GetIO();
+//     ImGui_ImplGlfw_InitForOpenGL(gapp.m_window.m_window, true);
+//     ImGui_ImplOpenGL3_Init();
+//     ImGui::StyleColorsDark();
  
     gapp.run();
     

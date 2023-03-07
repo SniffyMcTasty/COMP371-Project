@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_shader_viewer: phony || CMakeFiles/shade
 build CMakeFiles/shader_viewer.dir/src/GLUtils.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/GLUtils.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\GLUtils.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -60,7 +60,7 @@ build CMakeFiles/shader_viewer.dir/src/GLUtils.cpp.obj: CXX_COMPILER__shader_vie
 build CMakeFiles/shader_viewer.dir/src/ObjModel.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/ObjModel.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ObjModel.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -68,7 +68,7 @@ build CMakeFiles/shader_viewer.dir/src/ObjModel.cpp.obj: CXX_COMPILER__shader_vi
 build CMakeFiles/shader_viewer.dir/src/ObjModel2.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/ObjModel2.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ObjModel2.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -76,7 +76,7 @@ build CMakeFiles/shader_viewer.dir/src/ObjModel2.cpp.obj: CXX_COMPILER__shader_v
 build CMakeFiles/shader_viewer.dir/src/ObjParser.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/ObjParser.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ObjParser.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -84,7 +84,7 @@ build CMakeFiles/shader_viewer.dir/src/ObjParser.cpp.obj: CXX_COMPILER__shader_v
 build CMakeFiles/shader_viewer.dir/src/RUIObject.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/RUIObject.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\RUIObject.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -92,7 +92,7 @@ build CMakeFiles/shader_viewer.dir/src/RUIObject.cpp.obj: CXX_COMPILER__shader_v
 build CMakeFiles/shader_viewer.dir/src/RenderModel.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/RenderModel.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\RenderModel.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -100,7 +100,7 @@ build CMakeFiles/shader_viewer.dir/src/RenderModel.cpp.obj: CXX_COMPILER__shader
 build CMakeFiles/shader_viewer.dir/src/TCamera.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/TCamera.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TCamera.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -108,7 +108,7 @@ build CMakeFiles/shader_viewer.dir/src/TCamera.cpp.obj: CXX_COMPILER__shader_vie
 build CMakeFiles/shader_viewer.dir/src/TOGLApp.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/TOGLApp.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TOGLApp.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -116,7 +116,7 @@ build CMakeFiles/shader_viewer.dir/src/TOGLApp.cpp.obj: CXX_COMPILER__shader_vie
 build CMakeFiles/shader_viewer.dir/src/TOGLWindow.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/TOGLWindow.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TOGLWindow.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -124,7 +124,7 @@ build CMakeFiles/shader_viewer.dir/src/TOGLWindow.cpp.obj: CXX_COMPILER__shader_
 build CMakeFiles/shader_viewer.dir/src/TOGWLayer.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/TOGWLayer.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TOGWLayer.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -132,7 +132,7 @@ build CMakeFiles/shader_viewer.dir/src/TOGWLayer.cpp.obj: CXX_COMPILER__shader_v
 build CMakeFiles/shader_viewer.dir/src/TTrackBall.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/TTrackBall.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TTrackBall.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -140,7 +140,7 @@ build CMakeFiles/shader_viewer.dir/src/TTrackBall.cpp.obj: CXX_COMPILER__shader_
 build CMakeFiles/shader_viewer.dir/src/TTrackBall360.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/TTrackBall360.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TTrackBall360.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -148,7 +148,7 @@ build CMakeFiles/shader_viewer.dir/src/TTrackBall360.cpp.obj: CXX_COMPILER__shad
 build CMakeFiles/shader_viewer.dir/src/TTrackBall360google.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/TTrackBall360google.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TTrackBall360google.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -156,7 +156,7 @@ build CMakeFiles/shader_viewer.dir/src/TTrackBall360google.cpp.obj: CXX_COMPILER
 build CMakeFiles/shader_viewer.dir/src/Text.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/Text.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\Text.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -164,7 +164,7 @@ build CMakeFiles/shader_viewer.dir/src/Text.cpp.obj: CXX_COMPILER__shader_viewer
 build CMakeFiles/shader_viewer.dir/src/Virtual3DLayer.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/Virtual3DLayer.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\Virtual3DLayer.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
@@ -172,10 +172,66 @@ build CMakeFiles/shader_viewer.dir/src/Virtual3DLayer.cpp.obj: CXX_COMPILER__sha
 build CMakeFiles/shader_viewer.dir/src/main.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/main.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
+
+build CMakeFiles/shader_viewer.dir/src/ImGui/imgui.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/ImGui/imgui.cpp || cmake_object_order_depends_target_shader_viewer
+  DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
+  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  OBJECT_DIR = CMakeFiles\shader_viewer.dir
+  OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
+
+build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_demo.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/ImGui/imgui_demo.cpp || cmake_object_order_depends_target_shader_viewer
+  DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_demo.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
+  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  OBJECT_DIR = CMakeFiles\shader_viewer.dir
+  OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
+
+build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_draw.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/ImGui/imgui_draw.cpp || cmake_object_order_depends_target_shader_viewer
+  DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_draw.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
+  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  OBJECT_DIR = CMakeFiles\shader_viewer.dir
+  OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
+
+build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_impl_glfw.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/ImGui/imgui_impl_glfw.cpp || cmake_object_order_depends_target_shader_viewer
+  DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_impl_glfw.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
+  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  OBJECT_DIR = CMakeFiles\shader_viewer.dir
+  OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
+
+build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_impl_opengl3.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/ImGui/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_shader_viewer
+  DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_impl_opengl3.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
+  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  OBJECT_DIR = CMakeFiles\shader_viewer.dir
+  OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
+
+build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_tables.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/ImGui/imgui_tables.cpp || cmake_object_order_depends_target_shader_viewer
+  DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_tables.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
+  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  OBJECT_DIR = CMakeFiles\shader_viewer.dir
+  OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
+
+build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_widgets.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/ImGui/imgui_widgets.cpp || cmake_object_order_depends_target_shader_viewer
+  DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_widgets.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
+  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  OBJECT_DIR = CMakeFiles\shader_viewer.dir
+  OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
 
 
 # =============================================================================
@@ -185,7 +241,7 @@ build CMakeFiles/shader_viewer.dir/src/main.cpp.obj: CXX_COMPILER__shader_viewer
 #############################################
 # Link the executable shader_viewer.exe
 
-build shader_viewer.exe: CXX_EXECUTABLE_LINKER__shader_viewer_Debug CMakeFiles/shader_viewer.dir/src/GLUtils.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjModel.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjModel2.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjParser.cpp.obj CMakeFiles/shader_viewer.dir/src/RUIObject.cpp.obj CMakeFiles/shader_viewer.dir/src/RenderModel.cpp.obj CMakeFiles/shader_viewer.dir/src/TCamera.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGLApp.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGLWindow.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGWLayer.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall360.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall360google.cpp.obj CMakeFiles/shader_viewer.dir/src/Text.cpp.obj CMakeFiles/shader_viewer.dir/src/Virtual3DLayer.cpp.obj CMakeFiles/shader_viewer.dir/src/main.cpp.obj | F$:/Github/vcpkg/installed/x64-windows/debug/lib/glew32d.lib F$:/Github/vcpkg/installed/x64-windows/debug/lib/glfw3dll.lib
+build shader_viewer.exe: CXX_EXECUTABLE_LINKER__shader_viewer_Debug CMakeFiles/shader_viewer.dir/src/GLUtils.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjModel.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjModel2.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjParser.cpp.obj CMakeFiles/shader_viewer.dir/src/RUIObject.cpp.obj CMakeFiles/shader_viewer.dir/src/RenderModel.cpp.obj CMakeFiles/shader_viewer.dir/src/TCamera.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGLApp.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGLWindow.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGWLayer.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall360.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall360google.cpp.obj CMakeFiles/shader_viewer.dir/src/Text.cpp.obj CMakeFiles/shader_viewer.dir/src/Virtual3DLayer.cpp.obj CMakeFiles/shader_viewer.dir/src/main.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_demo.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_draw.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_impl_glfw.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_impl_opengl3.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_tables.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_widgets.cpp.obj | F$:/Github/vcpkg/installed/x64-windows/debug/lib/glew32d.lib F$:/Github/vcpkg/installed/x64-windows/debug/lib/glfw3dll.lib
   FLAGS = -g
   LINK_LIBRARIES = -lopengl32  -lglu32  F:/Github/vcpkg/installed/x64-windows/debug/lib/glew32d.lib  F:/Github/vcpkg/installed/x64-windows/debug/lib/glfw3dll.lib  -lopengl32  -lopengl32  -lglu32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\shader_viewer.dir

@@ -8,7 +8,7 @@
 
 1. Create UI for user selection
 2. Create a metallic shader
-3. Create a toon shader shader
+3. Create a toon shader
 4. Create a balloon shader
 5. Allow user to load custom shader
 

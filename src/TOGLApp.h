@@ -45,7 +45,7 @@ public:
     static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
     static void resize_callback(GLFWwindow* window, int wx, int wyy);
     
-    static bool gbutton; /* true if some button pressed */
+    static bool gbutton, ctrlbutton; /* true if some button pressed */
     static int gmods;
     static double gx;
     static double gy;

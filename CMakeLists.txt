@@ -17,6 +17,7 @@ set(ALL_LIBS
         GLEW::GLEW
         glfw
         glm::glm
+        nfd
         )
 
 add_definitions(
@@ -31,6 +32,7 @@ add_definitions(
 
 aux_source_directory(src SOURCES)
 aux_source_directory(src/ImGui IMGUI_SOURCE)
-add_executable(${PROJECT_NAME} ${SOURCES} ${IMGUI_SOURCE})
+add_subdirectory(src/NFDextended NFD_SOURCE)
+add_executable(${PROJECT_NAME} ${SOURCES} ${IMGUI_SOURCE} ${NFD_SOURCE})
 target_link_libraries(${PROJECT_NAME} ${ALL_LIBS})
 

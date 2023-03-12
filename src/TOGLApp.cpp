@@ -1,10 +1,6 @@
 #include <iostream>
 #include "TOGLApp.h"
 
-#include "ImGui/imgui.h"
-#include "ImGui/imgui_impl_opengl3.h"
-#include "ImGui/imgui_impl_glfw.h"
-
 using namespace std;
 
 namespace TAPP {
@@ -59,6 +55,7 @@ namespace TAPP {
     void TOGLApp::run(){
         
         m_window.init();
+        string filename = "teapot1";
 
         do {
             glfwPollEvents();
@@ -76,7 +73,30 @@ namespace TAPP {
 
             // Model selection window
             ImGui::Begin("Model selection");
-            ImGui::Text("../assets/teapot1.obj");
+            ImGui::Text(filename.c_str());
+            if (ImGui::Button("Browse")) {
+                NFD_Init();
+                nfdchar_t *outPath;
+                nfdfilteritem_t filter[1] = {{"Object file", "obj"}};
+                nfdresult_t result = NFD_OpenDialog(&outPath, filter, 1, NULL);
+                if(result == NFD_OKAY) {
+                    puts("Success");
+                    puts(outPath);
+                    string temp;
+                    char *p = strtok(outPath, "\\");
+                    while(p != NULL) {
+                        temp = p;
+                        p = strtok(NULL, "\\");
+                    }
+                    filename = temp.substr(0, temp.length() - 4);
+                    free(outPath);
+                } else if(result == NFD_CANCEL) {
+                    puts("User cancelled");
+                } else {
+                    printf("Error: %s\n", NFD_GetError());
+                }
+                NFD_Quit();
+            }
             ImGui::End();
 
             // Render ImGui

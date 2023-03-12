@@ -47,13 +47,13 @@ cmake_ninja_workdir = F$:/Github/COMP371_dockerimage/COMP371-Project/cmake-build
 #############################################
 # Order-only phony target for shader_viewer
 
-build cmake_object_order_depends_target_shader_viewer: phony || CMakeFiles/shader_viewer.dir
+build cmake_object_order_depends_target_shader_viewer: phony || cmake_object_order_depends_target_nfd
 
 build CMakeFiles/shader_viewer.dir/src/GLUtils.cpp.obj: CXX_COMPILER__shader_viewer_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/GLUtils.cpp || cmake_object_order_depends_target_shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\GLUtils.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -61,7 +61,7 @@ build CMakeFiles/shader_viewer.dir/src/ObjModel.cpp.obj: CXX_COMPILER__shader_vi
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ObjModel.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -69,7 +69,7 @@ build CMakeFiles/shader_viewer.dir/src/ObjModel2.cpp.obj: CXX_COMPILER__shader_v
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ObjModel2.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -77,7 +77,7 @@ build CMakeFiles/shader_viewer.dir/src/ObjParser.cpp.obj: CXX_COMPILER__shader_v
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ObjParser.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -85,7 +85,7 @@ build CMakeFiles/shader_viewer.dir/src/RUIObject.cpp.obj: CXX_COMPILER__shader_v
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\RUIObject.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -93,7 +93,7 @@ build CMakeFiles/shader_viewer.dir/src/RenderModel.cpp.obj: CXX_COMPILER__shader
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\RenderModel.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -101,7 +101,7 @@ build CMakeFiles/shader_viewer.dir/src/TCamera.cpp.obj: CXX_COMPILER__shader_vie
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TCamera.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -109,7 +109,7 @@ build CMakeFiles/shader_viewer.dir/src/TOGLApp.cpp.obj: CXX_COMPILER__shader_vie
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TOGLApp.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -117,7 +117,7 @@ build CMakeFiles/shader_viewer.dir/src/TOGLWindow.cpp.obj: CXX_COMPILER__shader_
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TOGLWindow.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -125,7 +125,7 @@ build CMakeFiles/shader_viewer.dir/src/TOGWLayer.cpp.obj: CXX_COMPILER__shader_v
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TOGWLayer.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -133,7 +133,7 @@ build CMakeFiles/shader_viewer.dir/src/TTrackBall.cpp.obj: CXX_COMPILER__shader_
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TTrackBall.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -141,7 +141,7 @@ build CMakeFiles/shader_viewer.dir/src/TTrackBall360.cpp.obj: CXX_COMPILER__shad
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TTrackBall360.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -149,7 +149,7 @@ build CMakeFiles/shader_viewer.dir/src/TTrackBall360google.cpp.obj: CXX_COMPILER
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\TTrackBall360google.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -157,7 +157,7 @@ build CMakeFiles/shader_viewer.dir/src/Text.cpp.obj: CXX_COMPILER__shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\Text.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -165,7 +165,7 @@ build CMakeFiles/shader_viewer.dir/src/Virtual3DLayer.cpp.obj: CXX_COMPILER__sha
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\Virtual3DLayer.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -173,7 +173,7 @@ build CMakeFiles/shader_viewer.dir/src/main.cpp.obj: CXX_COMPILER__shader_viewer
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src
 
@@ -181,7 +181,7 @@ build CMakeFiles/shader_viewer.dir/src/ImGui/imgui.cpp.obj: CXX_COMPILER__shader
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
 
@@ -189,7 +189,7 @@ build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_demo.cpp.obj: CXX_COMPILER__s
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_demo.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
 
@@ -197,7 +197,7 @@ build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_draw.cpp.obj: CXX_COMPILER__s
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_draw.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
 
@@ -205,7 +205,7 @@ build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_impl_glfw.cpp.obj: CXX_COMPIL
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_impl_glfw.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
 
@@ -213,7 +213,7 @@ build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_impl_opengl3.cpp.obj: CXX_COM
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_impl_opengl3.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
 
@@ -221,7 +221,7 @@ build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_tables.cpp.obj: CXX_COMPILER_
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_tables.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
 
@@ -229,7 +229,7 @@ build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_widgets.cpp.obj: CXX_COMPILER
   DEFINES = -DGLEW_STATIC -DGLFW_DLL -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\shader_viewer.dir\src\ImGui\imgui_widgets.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -isystem F:/Github/vcpkg/installed/x64-windows/include
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include -isystem F:/Github/vcpkg/installed/x64-windows/include
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   OBJECT_FILE_DIR = CMakeFiles\shader_viewer.dir\src\ImGui
 
@@ -241,9 +241,9 @@ build CMakeFiles/shader_viewer.dir/src/ImGui/imgui_widgets.cpp.obj: CXX_COMPILER
 #############################################
 # Link the executable shader_viewer.exe
 
-build shader_viewer.exe: CXX_EXECUTABLE_LINKER__shader_viewer_Debug CMakeFiles/shader_viewer.dir/src/GLUtils.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjModel.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjModel2.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjParser.cpp.obj CMakeFiles/shader_viewer.dir/src/RUIObject.cpp.obj CMakeFiles/shader_viewer.dir/src/RenderModel.cpp.obj CMakeFiles/shader_viewer.dir/src/TCamera.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGLApp.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGLWindow.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGWLayer.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall360.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall360google.cpp.obj CMakeFiles/shader_viewer.dir/src/Text.cpp.obj CMakeFiles/shader_viewer.dir/src/Virtual3DLayer.cpp.obj CMakeFiles/shader_viewer.dir/src/main.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_demo.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_draw.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_impl_glfw.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_impl_opengl3.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_tables.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_widgets.cpp.obj | F$:/Github/vcpkg/installed/x64-windows/debug/lib/glew32d.lib F$:/Github/vcpkg/installed/x64-windows/debug/lib/glfw3dll.lib
+build shader_viewer.exe: CXX_EXECUTABLE_LINKER__shader_viewer_Debug CMakeFiles/shader_viewer.dir/src/GLUtils.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjModel.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjModel2.cpp.obj CMakeFiles/shader_viewer.dir/src/ObjParser.cpp.obj CMakeFiles/shader_viewer.dir/src/RUIObject.cpp.obj CMakeFiles/shader_viewer.dir/src/RenderModel.cpp.obj CMakeFiles/shader_viewer.dir/src/TCamera.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGLApp.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGLWindow.cpp.obj CMakeFiles/shader_viewer.dir/src/TOGWLayer.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall360.cpp.obj CMakeFiles/shader_viewer.dir/src/TTrackBall360google.cpp.obj CMakeFiles/shader_viewer.dir/src/Text.cpp.obj CMakeFiles/shader_viewer.dir/src/Virtual3DLayer.cpp.obj CMakeFiles/shader_viewer.dir/src/main.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_demo.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_draw.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_impl_glfw.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_impl_opengl3.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_tables.cpp.obj CMakeFiles/shader_viewer.dir/src/ImGui/imgui_widgets.cpp.obj | F$:/Github/vcpkg/installed/x64-windows/debug/lib/glew32d.lib F$:/Github/vcpkg/installed/x64-windows/debug/lib/glfw3dll.lib NFD_SOURCE/src/libnfd.a || NFD_SOURCE/src/libnfd.a
   FLAGS = -g
-  LINK_LIBRARIES = -lopengl32  -lglu32  F:/Github/vcpkg/installed/x64-windows/debug/lib/glew32d.lib  F:/Github/vcpkg/installed/x64-windows/debug/lib/glfw3dll.lib  -lopengl32  -lopengl32  -lglu32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = -lopengl32  -lglu32  F:/Github/vcpkg/installed/x64-windows/debug/lib/glew32d.lib  F:/Github/vcpkg/installed/x64-windows/debug/lib/glfw3dll.lib  NFD_SOURCE/src/libnfd.a  -lopengl32  -lopengl32  -lglu32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\shader_viewer.dir
   POST_BUILD = cmd.exe /C "cd /D F:\Github\COMP371_dockerimage\COMP371-Project\cmake-build-debug && C:\Users\Alex\AppData\Local\Microsoft\WindowsApps\pwsh.exe -noprofile -executionpolicy Bypass -file F:/Github/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug/shader_viewer.exe -installedDir F:/Github/vcpkg/installed/x64-windows/debug/bin -OutVariable out"
   PRE_LINK = cd .
@@ -275,7 +275,100 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# F:/Github/COMP371_dockerimage/COMP371-Project/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build NFD_SOURCE/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D F:\Github\COMP371_dockerimage\COMP371-Project\cmake-build-debug\NFD_SOURCE && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build NFD_SOURCE/edit_cache: phony NFD_SOURCE/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build NFD_SOURCE/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D F:\Github\COMP371_dockerimage\COMP371-Project\cmake-build-debug\NFD_SOURCE && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SF:\Github\COMP371_dockerimage\COMP371-Project -BF:\Github\COMP371_dockerimage\COMP371-Project\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build NFD_SOURCE/rebuild_cache: phony NFD_SOURCE/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# F:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target nfd
+
+
+#############################################
+# Order-only phony target for nfd
+
+build cmake_object_order_depends_target_nfd: phony || NFD_SOURCE/src/CMakeFiles/nfd.dir
+
+build NFD_SOURCE/src/CMakeFiles/nfd.dir/nfd_win.cpp.obj: CXX_COMPILER__nfd_Debug F$:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/nfd_win.cpp || cmake_object_order_depends_target_nfd
+  DEFINES = -DGLEW_STATIC -DGLM_ENABLE_EXPERIMENTAL -DTW_NO_DIRECT3D -DTW_NO_LIB_PRAGMA -DTW_STATIC -DUSE_ZLIB_T -D_CRT_SECURE_NO_WARNINGS
+  DEP_FILE = NFD_SOURCE\src\CMakeFiles\nfd.dir\nfd_win.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -nostdlib -fno-exceptions -fno-rtti -std=gnu++11
+  INCLUDES = -IF:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/include
+  OBJECT_DIR = NFD_SOURCE\src\CMakeFiles\nfd.dir
+  OBJECT_FILE_DIR = NFD_SOURCE\src\CMakeFiles\nfd.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target nfd
+
+
+#############################################
+# Link the static library NFD_SOURCE\src\libnfd.a
+
+build NFD_SOURCE/src/libnfd.a: CXX_STATIC_LIBRARY_LINKER__nfd_Debug NFD_SOURCE/src/CMakeFiles/nfd.dir/nfd_win.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = NFD_SOURCE\src\CMakeFiles\nfd.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = NFD_SOURCE\src\libnfd.a
+  TARGET_PDB = nfd.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build NFD_SOURCE/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D F:\Github\COMP371_dockerimage\COMP371-Project\cmake-build-debug\NFD_SOURCE\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build NFD_SOURCE/src/edit_cache: phony NFD_SOURCE/src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build NFD_SOURCE/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D F:\Github\COMP371_dockerimage\COMP371-Project\cmake-build-debug\NFD_SOURCE\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SF:\Github\COMP371_dockerimage\COMP371-Project -BF:\Github\COMP371_dockerimage\COMP371-Project\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build NFD_SOURCE/src/rebuild_cache: phony NFD_SOURCE/src/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
+
+build libnfd.a: phony NFD_SOURCE/src/libnfd.a
+
+build nfd: phony NFD_SOURCE/src/libnfd.a
 
 build shader_viewer: phony shader_viewer.exe
 
@@ -287,7 +380,21 @@ build shader_viewer: phony shader_viewer.exe
 #############################################
 # Folder: F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug
 
-build all: phony shader_viewer.exe
+build all: phony shader_viewer.exe NFD_SOURCE/all
+
+# =============================================================================
+
+#############################################
+# Folder: F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug/NFD_SOURCE
+
+build NFD_SOURCE/all: phony NFD_SOURCE/src/all
+
+# =============================================================================
+
+#############################################
+# Folder: F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug/NFD_SOURCE/src
+
+build NFD_SOURCE/src/all: phony NFD_SOURCE/src/libnfd.a
 
 # =============================================================================
 # Built-in targets
@@ -296,14 +403,14 @@ build all: phony shader_viewer.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindOpenGL.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake F$:/Github/COMP371_dockerimage/COMP371-Project/CMakeLists.txt F$:/Github/vcpkg/installed/x64-windows/share/glew/CopyImportedTargetProperties.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-config.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets-debug.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets-release.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/vcpkg-cmake-wrapper.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-release.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets.cmake F$:/Github/vcpkg/installed/x64-windows/share/glm/glm-config.cmake F$:/Github/vcpkg/scripts/buildsystems/vcpkg.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindOpenGL.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake F$:/Github/COMP371_dockerimage/COMP371-Project/CMakeLists.txt F$:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/CMakeLists.txt F$:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/CMakeLists.txt F$:/Github/vcpkg/installed/x64-windows/share/glew/CopyImportedTargetProperties.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-config.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets-debug.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets-release.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/vcpkg-cmake-wrapper.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-release.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets.cmake F$:/Github/vcpkg/installed/x64-windows/share/glm/glm-config.cmake F$:/Github/vcpkg/scripts/buildsystems/vcpkg.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindOpenGL.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake F$:/Github/COMP371_dockerimage/COMP371-Project/CMakeLists.txt F$:/Github/vcpkg/installed/x64-windows/share/glew/CopyImportedTargetProperties.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-config.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets-debug.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets-release.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/vcpkg-cmake-wrapper.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-release.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets.cmake F$:/Github/vcpkg/installed/x64-windows/share/glm/glm-config.cmake F$:/Github/vcpkg/scripts/buildsystems/vcpkg.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindOpenGL.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake F$:/Github/COMP371_dockerimage/COMP371-Project/CMakeLists.txt F$:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/CMakeLists.txt F$:/Github/COMP371_dockerimage/COMP371-Project/src/NFDextended/src/CMakeLists.txt F$:/Github/vcpkg/installed/x64-windows/share/glew/CopyImportedTargetProperties.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-config.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets-debug.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets-release.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/glew-targets.cmake F$:/Github/vcpkg/installed/x64-windows/share/glew/vcpkg-cmake-wrapper.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-release.cmake F$:/Github/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets.cmake F$:/Github/vcpkg/installed/x64-windows/share/glm/glm-config.cmake F$:/Github/vcpkg/scripts/buildsystems/vcpkg.cmake: phony
 
 
 #############################################

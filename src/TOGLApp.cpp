@@ -80,9 +80,19 @@ namespace TAPP {
                 nfdfilteritem_t filter[1] = {{"Object file", "obj"}};
                 nfdresult_t result = NFD_OpenDialog(&outPath, filter, 1, NULL);
                 if(result == NFD_OKAY) {
+                    // Load file
                     puts("Success");
                     puts(outPath);
-                    string temp;
+                    string temp = outPath;
+
+                    // Render model
+                    Virtual3DLayer* view = (Virtual3DLayer*) m_window.m_layers.at(0);
+                    RenderModel* sp = new RenderModel(temp);
+                    view->m_objects.clear();
+                    view->m_objects.push_back(sp);
+                    m_window.init();
+
+                    // Change name of shown file
                     char *p = strtok(outPath, "\\");
                     while(p != NULL) {
                         temp = p;

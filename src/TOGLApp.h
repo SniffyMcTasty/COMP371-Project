@@ -15,6 +15,8 @@
 #include <GLFW/glfw3.h>
 
 #include "TOGLWindow.h"
+#include "Virtual3DLayer.h"
+#include "RenderModel.h"
 
 #include "ImGui/imgui.h"
 #include "ImGui/imgui_impl_opengl3.h"

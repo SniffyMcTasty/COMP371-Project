@@ -31,6 +31,7 @@ public:
     
     GLFWwindow* m_window;
     int m_width, m_height;
+    bool isSleeping = false;
     
     
     // These are the size of the windows and not the frambuffers

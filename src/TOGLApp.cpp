@@ -59,6 +59,7 @@ namespace TAPP {
 
         do {
             glfwPollEvents();
+            if(m_window.isSleeping) continue;
             glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -235,6 +236,7 @@ namespace TAPP {
     
     void TOGLApp::resize_callback(GLFWwindow* window, int wx, int wy){
         gapp.m_window.resize(wx, wy);
+        gapp.m_window.isSleeping = wx == 0 || wy == 0;
     }
     
 };  // namespace

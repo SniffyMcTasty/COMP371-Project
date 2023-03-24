@@ -113,7 +113,8 @@ namespace TAPP {
             // Shaders selection window
             ImGui::Begin("Shader selection");
             ImGui::Text(vsName.c_str());
-            if (ImGui::Button("Browse vertex shaders")) {
+            ImGui::Text(fsName.c_str());
+            if (ImGui::Button("Browse")) {
                 NFD_Init();
                 nfdchar_t *outPath;
                 nfdfilteritem_t filter[1] = {{"GLSL vertex shader", "vertexshader.glsl"}};
@@ -124,9 +125,7 @@ namespace TAPP {
                     puts(outPath);
                     string temp = outPath;
 
-                    // Re-init shader
                     vertexShader = temp;
-                    m_window.init(vertexShader, fragmentShader);
 
                     // Change name of shown file
                     char *p = strtok(outPath, "\\");
@@ -142,22 +141,16 @@ namespace TAPP {
                     printf("Error: %s\n", NFD_GetError());
                 }
                 NFD_Quit();
-            }
-            ImGui::Text(fsName.c_str());
-            if (ImGui::Button("Browse fragment shaders")) {
                 NFD_Init();
-                nfdchar_t *outPath;
-                nfdfilteritem_t filter[1] = {{"GLSL file", "fragmentshader.glsl"}};
-                nfdresult_t result = NFD_OpenDialog(&outPath, filter, 1, NULL);
+                filter[0] = {"GLSL file", "fragmentshader.glsl"};
+                result = NFD_OpenDialog(&outPath, filter, 1, NULL);
                 if(result == NFD_OKAY) {
                     // Load file
                     puts("Success");
                     puts(outPath);
                     string temp = outPath;
 
-                    // Re-init shader
                     fragmentShader = temp;
-                    m_window.init(vertexShader, fragmentShader);
 
                     // Change name of shown file
                     char *p = strtok(outPath, "\\");
@@ -173,6 +166,7 @@ namespace TAPP {
                     printf("Error: %s\n", NFD_GetError());
                 }
                 NFD_Quit();
+                m_window.init(vertexShader, fragmentShader);
             }
             ImGui::End();
 

@@ -141,6 +141,7 @@ namespace TAPP {
                     printf("Error: %s\n", NFD_GetError());
                 }
                 NFD_Quit();
+                if (result == NFD_CANCEL) break;
                 NFD_Init();
                 filter[0] = {"GLSL file", "fragmentshader.glsl"};
                 result = NFD_OpenDialog(&outPath, filter, 1, NULL);
@@ -166,6 +167,7 @@ namespace TAPP {
                     printf("Error: %s\n", NFD_GetError());
                 }
                 NFD_Quit();
+                if (result == NFD_CANCEL) break;
                 m_window.init(vertexShader, fragmentShader);
             }
             ImGui::End();

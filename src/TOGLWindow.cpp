@@ -106,10 +106,10 @@ namespace TAPP {
 
     }
     
-    void TOGLWindow::init(){
+    void TOGLWindow::init(std::string vertexShader, std::string fragmentShader){
         
         for(int i=0;i<m_layers.size();++i){
-            m_layers[i]->init(m_width, m_height);
+            m_layers[i]->init(m_width, m_height, vertexShader, fragmentShader);
         }
         
     }

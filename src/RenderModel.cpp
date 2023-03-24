@@ -109,7 +109,7 @@ namespace TAPP {
 
 
     
-    void RenderModel::init(){
+    void RenderModel::init(std::string vertexShader, std::string fragmentShader){
         is_error();
         
         
@@ -123,15 +123,15 @@ namespace TAPP {
         cout<<"Load shaders!"<<endl;
 
         // Create and compile our GLSL program from the shaders
-        string vsh1 = "../assets/Phong.vertexshader.glsl";
-        string fsh1 = "../assets/Phong.fragmentshader.glsl";
+//        string vsh1 = "../assets/Phong.vertexshader.glsl";
+//        string fsh1 = "../assets/Phong.fragmentshader.glsl";
 
-        programPhong = LoadShaders( vsh1.c_str(), fsh1.c_str());
+        program = LoadShaders( vertexShader.c_str(), fragmentShader.c_str());
         
-         vsh1 = "../assets/Line.vertexshader.glsl";
-         fsh1 = "../assets/Line.fragmentshader.glsl";
-
-        programWire = LoadShaders( vsh1.c_str(), fsh1.c_str());
+//         vsh1 = "../assets/Line.vertexshader.glsl";
+//         fsh1 = "../assets/Line.fragmentshader.glsl";
+//
+//        programWire = LoadShaders( vsh1.c_str(), fsh1.c_str());
        
         if(is_error(true)){
             cout<<"Err 00"<<endl;
@@ -140,14 +140,14 @@ namespace TAPP {
        // load uniforms
        
         // Get a handle for our "MVP" uniform
-        shaderMVP = glGetUniformLocation(programPhong, "MVP");
-        shaderV = glGetUniformLocation(programPhong, "V");
-        shaderLight = glGetUniformLocation(programPhong, "LightPosition_worldspace");
-        shaderDiffuse = glGetUniformLocation(programPhong, "diffuse_color");
+        shaderMVP = glGetUniformLocation(program, "MVP");
+        shaderV = glGetUniformLocation(program, "V");
+        shaderLight = glGetUniformLocation(program, "LightPosition_worldspace");
+        shaderDiffuse = glGetUniformLocation(program, "diffuse_color");
         
-        wireMVP = glGetUniformLocation(programWire, "MVP");
-        wireV = glGetUniformLocation(programWire, "V");
-        wireDiffuse = glGetUniformLocation(programWire, "diffuse_color");
+//        wireMVP = glGetUniformLocation(programWire, "MVP");
+//        wireV = glGetUniformLocation(programWire, "V");
+//        wireDiffuse = glGetUniformLocation(programWire, "diffuse_color");
         
         
         if(is_error()){
@@ -202,11 +202,14 @@ void RenderModel::render(){
          glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
         
         // Get a handle for our "LightPosition" uniform
-        if(mode==0){
-            glUseProgram(programPhong);
-        } else {
-            glUseProgram(programWire);
-        }
+//        if(mode==0){
+//            glUseProgram(program);
+//        }
+//        else {
+//            glUseProgram(programWire);
+//        }
+
+        glUseProgram(program);
     //    cout<<"render"<<endl;
         
         if(is_error()){
@@ -240,12 +243,13 @@ void RenderModel::render(){
             glUniformMatrix4fv(shaderV, 1, GL_FALSE, &m_ViewMatrix[0][0]);
             glUniform3f(shaderDiffuse, dc.x, dc.y, dc.z);
             glUniform3f(shaderLight, lightPos.x, lightPos.y, lightPos.z);
-        } else {
-            dc  =glm::vec3(0, 0, 1);
-            glUniformMatrix4fv(wireMVP, 1, GL_FALSE, &MVP[0][0]);
-            glUniformMatrix4fv(wireV, 1, GL_FALSE, &m_ViewMatrix[0][0]);
-            glUniform3f(wireDiffuse, dc.x, dc.y, dc.z);
         }
+//        else {
+//            dc  =glm::vec3(0, 0, 1);
+//            glUniformMatrix4fv(wireMVP, 1, GL_FALSE, &MVP[0][0]);
+//            glUniformMatrix4fv(wireV, 1, GL_FALSE, &m_ViewMatrix[0][0]);
+//            glUniform3f(wireDiffuse, dc.x, dc.y, dc.z);
+//        }
         
        
         if(is_error()){

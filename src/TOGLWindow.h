@@ -50,7 +50,7 @@ public:
     
     void resize(int w, int h);
     
-    void init();
+    void init(std::string vertexShader, std::string fragmentShader);
     //
 };
 

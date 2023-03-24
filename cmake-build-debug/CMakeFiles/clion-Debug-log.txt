@@ -1,6 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.3.2/bin/ninja/win/x64/ninja.exe" -DCMAKE_TOOLCHAIN_FILE=F:/Github/vcpkg/scripts/buildsystems/vcpkg.cmake -G Ninja -S F:\Github\COMP371_dockerimage\COMP371-Project -B F:\Github\COMP371_dockerimage\COMP371-Project\cmake-build-debug
-nfd Platform: PLATFORM_WIN32
-nfd Compiler: COMPILER_GNU
--- Configuring done
--- Generating done
--- Build files have been written to: F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug

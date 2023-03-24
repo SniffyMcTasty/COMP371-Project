@@ -35,13 +35,13 @@ namespace TAPP {
         GLuint shaderLight;
         GLuint shaderDiffuse;//diffuse color
         
-        GLuint wireMVP;
-        GLuint wireV;
-        GLuint wireDiffuse;//diffuse color
+//        GLuint wireMVP;
+//        GLuint wireV;
+//        GLuint wireDiffuse;//diffuse color
         
         // shader program
-        GLuint programPhong;
-        GLuint programWire;
+        GLuint program;
+//        GLuint programWire;
         void load_shader();
         
         
@@ -65,7 +65,7 @@ namespace TAPP {
         
         ObjModel m_obj;
         
-        virtual void init();
+        virtual void init(std::string vertexShader, std::string fragmentShader);
         virtual void release();
         virtual void hover(double  x, double y, int mods);
         virtual void grab(double x, double y, int b, int mods /* 0 left, 1 right, 2 middle*/);

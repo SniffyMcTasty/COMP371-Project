@@ -50,12 +50,12 @@ namespace TAPP {
         return true;
         
     }
-    
    
     void TOGLApp::run(){
-        
-        m_window.init();
-        string filename = "teapot1";
+
+        string vertexShader = "../assets/Phong.vertexshader.glsl", fragmentShader = "../assets/Phong.fragmentshader.glsl";
+        m_window.init(vertexShader, fragmentShader);
+        string filename = "teapot1", vsName = "Phong.vertexshader", fsName = "Phong.fragmentshader";
 
         do {
             glfwPollEvents();
@@ -91,7 +91,7 @@ namespace TAPP {
                     RenderModel* sp = new RenderModel(temp);
                     view->m_objects.clear();
                     view->m_objects.push_back(sp);
-                    m_window.init();
+                    m_window.init(vertexShader, fragmentShader);
 
                     // Change name of shown file
                     char *p = strtok(outPath, "\\");
@@ -100,6 +100,72 @@ namespace TAPP {
                         p = strtok(NULL, "\\");
                     }
                     filename = temp.substr(0, temp.length() - 4);
+                    free(outPath);
+                } else if(result == NFD_CANCEL) {
+                    puts("User cancelled");
+                } else {
+                    printf("Error: %s\n", NFD_GetError());
+                }
+                NFD_Quit();
+            }
+            ImGui::End();
+
+            // Shaders selection window
+            ImGui::Begin("Shader selection");
+            ImGui::Text(vsName.c_str());
+            if (ImGui::Button("Browse vertex shaders")) {
+                NFD_Init();
+                nfdchar_t *outPath;
+                nfdfilteritem_t filter[1] = {{"GLSL vertex shader", "vertexshader.glsl"}};
+                nfdresult_t result = NFD_OpenDialog(&outPath, filter, 1, NULL);
+                if(result == NFD_OKAY) {
+                    // Load file
+                    puts("Success");
+                    puts(outPath);
+                    string temp = outPath;
+
+                    // Re-init shader
+                    vertexShader = temp;
+                    m_window.init(vertexShader, fragmentShader);
+
+                    // Change name of shown file
+                    char *p = strtok(outPath, "\\");
+                    while(p != NULL) {
+                        temp = p;
+                        p = strtok(NULL, "\\");
+                    }
+                    vsName = temp.substr(0, temp.length() - 5);
+                    free(outPath);
+                } else if(result == NFD_CANCEL) {
+                    puts("User cancelled");
+                } else {
+                    printf("Error: %s\n", NFD_GetError());
+                }
+                NFD_Quit();
+            }
+            ImGui::Text(fsName.c_str());
+            if (ImGui::Button("Browse fragment shaders")) {
+                NFD_Init();
+                nfdchar_t *outPath;
+                nfdfilteritem_t filter[1] = {{"GLSL file", "fragmentshader.glsl"}};
+                nfdresult_t result = NFD_OpenDialog(&outPath, filter, 1, NULL);
+                if(result == NFD_OKAY) {
+                    // Load file
+                    puts("Success");
+                    puts(outPath);
+                    string temp = outPath;
+
+                    // Re-init shader
+                    fragmentShader = temp;
+                    m_window.init(vertexShader, fragmentShader);
+
+                    // Change name of shown file
+                    char *p = strtok(outPath, "\\");
+                    while(p != NULL) {
+                        temp = p;
+                        p = strtok(NULL, "\\");
+                    }
+                    fsName = temp.substr(0, temp.length() - 5);
                     free(outPath);
                 } else if(result == NFD_CANCEL) {
                     puts("User cancelled");

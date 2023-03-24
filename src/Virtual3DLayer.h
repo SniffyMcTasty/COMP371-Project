@@ -26,7 +26,7 @@ namespace TAPP {
         
         std::vector<RUIObject*> m_objects;
     
-        virtual void init(int w, int h);
+        virtual void init(int w, int h, std::string vertexShader, std::string fragmentShader);
         virtual void hover(double  x, double y, int mods);
         virtual void grab(double x, double y, int b, int mods /* 0 left, 1 right, 2 middle*/);
         virtual void drag(double x, double y, int mods);

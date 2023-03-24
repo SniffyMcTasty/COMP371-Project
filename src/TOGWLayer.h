@@ -1,6 +1,7 @@
 #ifndef TOGLWLAYER_H
 #define TOGLWLAYER_H
 
+#include <string>
 
 namespace TAPP {
 
@@ -15,7 +16,7 @@ public:
     
     int m_width, m_height;
     
-    virtual void init(int w, int h) = 0;
+    virtual void init(int w, int h, std::string vertexShader, std::string fragmentShader) = 0;
     virtual void hover(double  x, double y, int mods)=0;
     virtual void grab(double x, double y, int b, int mods /* 0 left, 1 right, 2 middle*/)=0;
     virtual void drag(double x, double y, int mods)=0;

@@ -1,8 +1,0 @@
-F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug/CMakeFiles/shader_viewer.dir
-F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug/NFD_SOURCE/CMakeFiles/edit_cache.dir
-F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug/NFD_SOURCE/CMakeFiles/rebuild_cache.dir
-F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug/NFD_SOURCE/src/CMakeFiles/nfd.dir
-F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug/NFD_SOURCE/src/CMakeFiles/edit_cache.dir
-F:/Github/COMP371_dockerimage/COMP371-Project/cmake-build-debug/NFD_SOURCE/src/CMakeFiles/rebuild_cache.dir

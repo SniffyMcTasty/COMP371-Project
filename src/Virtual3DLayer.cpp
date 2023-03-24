@@ -190,14 +190,14 @@ namespace TAPP {
     }
     
     
-    void Virtual3DLayer::init(int w, int h){
+    void Virtual3DLayer::init(int w, int h, std::string vertexShader, std::string fragmentShader){
         resize(w, h);
         
         cout<<"W: "<<w<<" H: "<<h<<endl;
         glViewport(0,0,w, h);
         
         for(int i=0;i<m_objects.size();++i){
-            m_objects[i]->init();
+            m_objects[i]->init(vertexShader, fragmentShader);
         }
         
     }

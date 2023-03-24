@@ -8,6 +8,8 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/intersect.hpp>
 
+#include <string>
+
 namespace TAPP {
 
     
@@ -51,7 +53,7 @@ namespace TAPP {
     }
     
     
-        virtual void init()=0;
+        virtual void init(std::string vertexShader, std::string fragmentShader)=0;
         virtual void release()=0;
         virtual void resize(double x, double y)=0;
 

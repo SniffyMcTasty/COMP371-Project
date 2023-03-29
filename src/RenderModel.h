@@ -34,14 +34,10 @@ namespace TAPP {
         GLuint shaderV;
         GLuint shaderLight;
         GLuint shaderDiffuse;//diffuse color
-        
-//        GLuint wireMVP;
-//        GLuint wireV;
-//        GLuint wireDiffuse;//diffuse color
+
         
         // shader program
         GLuint program;
-//        GLuint programWire;
         void load_shader();
         
         

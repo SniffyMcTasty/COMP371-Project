@@ -23,18 +23,14 @@ void main() {
     // Declare inner uniform modifiers
     float inner_shininess = shininess;
 
-    if (inner_shininess > 1.0) inner_shininess = 1.0;
-    else if (inner_shininess <= 0.0) inner_shininess = 0.001;
+    // Compute the cosTheta angle
+    float cosTheta = dot(Normal_cameraspace, normalize(LightDirection_cameraspace));
 
-    // Compute the intensity
-    vec3 lightDirection = normalize(LightPosition_worldspace - Position_worldspace);
-    float intensity = dot(Normal_cameraspace, LightDirection_cameraspace);
-
-    // Clamp intensity from 0 to 1
-    intensity = clamp(abs(intensity), 0, 1);
+    // Clamp cosTheta from 0 to 1
+    cosTheta = clamp(abs(cosTheta), 0, 1);
 
     // Intensity is the same for all colors
-    vec3 result = diffuse_color * intensity * LightIntensity * LightColor;
+    vec3 result = diffuse_color * cosTheta * LightIntensity * LightColor;
 
     // Add some ambient
     result += ambient_color;
@@ -45,6 +41,7 @@ void main() {
     // Add some specular
     float specular = dot(Normal_cameraspace, normalize(LightDirection_cameraspace + EyeDirection_cameraspace));
     specular = clamp(abs(specular), 0, 1);
-    specular = pow(specular, inner_shininess * 128);
+    int minShininess = 3;
+    specular = pow(specular, minShininess - inner_shininess * minShininess + 0.001);
     color += specular_color * specular * LightIntensity * LightColor;
 }

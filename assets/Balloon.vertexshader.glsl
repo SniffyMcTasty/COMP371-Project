@@ -23,9 +23,7 @@ void main(){
 
     // Apply balloon-like transformation to the vertex position
     vec3 vertexPosition = vertexPosition_modelspace;
-    vertexPosition.x = vertexPosition.x + vertexNormal_modelspace.x * 0.1 * inflation;
-    vertexPosition.y = vertexPosition.y + vertexNormal_modelspace.y * 0.1 * inflation;
-    vertexPosition.z = vertexPosition.z + vertexNormal_modelspace.z * 0.1 * inflation;
+    vertexPosition += vertexNormal_modelspace * 0.1 * inflation;
 
     // Output position of the vertex, in clip space : MVP * position
     gl_Position =  MVP * vec4(vertexPosition,1);

@@ -39,8 +39,6 @@ float noise(vec3 p) {
 void main() {
     // Declare inner uniform modifiers
     float inner_shininess = shininess;
-    if (inner_shininess > 1.0) inner_shininess = 1.0;
-    else if (inner_shininess <= 0.0) inner_shininess = 0.001;
     float roughness = custom_property;
 
     // Compute surface normal

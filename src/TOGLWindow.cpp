@@ -136,7 +136,7 @@ namespace TAPP {
     }
     
     
-    void TOGLWindow::render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity){
+    void TOGLWindow::render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity, glm::vec3 diffuse, glm::vec3 ambient, glm::vec3 specular){
         
         glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -144,7 +144,7 @@ namespace TAPP {
         
 
         for(int i=0;i<m_layers.size();++i){
-            m_layers[i]->render(shininess, customProperty, lightPos, lightColor, lightIntensity);
+            m_layers[i]->render(shininess, customProperty, lightPos, lightColor, lightIntensity, diffuse, ambient, specular);
         }
  
         

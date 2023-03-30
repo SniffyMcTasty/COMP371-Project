@@ -30,7 +30,6 @@ namespace TAPP {
     
         
         // Uniform variables
-        
         GLuint shaderMVP;
         GLuint shaderV;
         GLuint shaderLightPos;
@@ -75,7 +74,7 @@ namespace TAPP {
         virtual void drag(double x, double y, int mods) ;
         virtual void resize(double x, double y);
         
-        virtual void render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity) ;
+        virtual void render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity, glm::vec3 diffuse, glm::vec3 ambient, glm::vec3 specular) ;
         
         
         virtual void render_pick_select(PickDataback& ) ; // to see if we selected this object

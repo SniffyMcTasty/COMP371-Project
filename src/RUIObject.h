@@ -63,7 +63,7 @@ namespace TAPP {
         virtual void drag(double x, double y, int mods) = 0;
       
         
-        virtual void render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity) = 0;
+        virtual void render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity, glm::vec3 diffuse, glm::vec3 ambient, glm::vec3 specular) = 0;
         virtual void render_pick_select(PickDataback& ) = 0; // to see if we selected this object
         virtual void render_pick_detail(PickDataback& )= 0; // to see if we selected a certain primitive
         

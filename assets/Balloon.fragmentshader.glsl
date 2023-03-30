@@ -20,9 +20,6 @@ uniform vec3 specular_color;
 uniform float shininess;
 
 void main() {
-    // Declare inner uniform modifiers
-    float inner_shininess = shininess;
-
     // Compute the cosTheta angle
     float cosTheta = dot(Normal_cameraspace, normalize(LightDirection_cameraspace));
 
@@ -42,6 +39,6 @@ void main() {
     float specular = dot(Normal_cameraspace, normalize(LightDirection_cameraspace + EyeDirection_cameraspace));
     specular = clamp(abs(specular), 0, 1);
     int minShininess = 3;
-    specular = pow(specular, minShininess - inner_shininess * minShininess + 0.001);
+    specular = pow(specular, minShininess - shininess * minShininess + 0.001);
     color += specular_color * specular * LightIntensity * LightColor;
 }

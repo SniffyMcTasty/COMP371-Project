@@ -17,6 +17,7 @@ uniform float LightIntensity;
 uniform vec3 diffuse_color;
 uniform vec3 ambient_color;
 uniform vec3 specular_color;
+uniform float shininess;
 
 void main(){
 
@@ -43,14 +44,15 @@ void main(){
 	//  - Looking into the reflection -> 1
 	//  - Looking elsewhere -> < 1
 	float cosAlpha = clamp( abs(dot( E,R )), 0,1 );
-	
+
+	int minShininess = 128;
 	color = 
 		// Ambient : simulates indirect lighting
 		ambient_color +
 		// Diffuse : "color" of the object
 		diffuse_color * LightColor * LightIntensity * cosTheta /*/ (distance*distance) */+
 		// Specular : reflective highlight, like a mirror
-		specular_color * LightColor * LightIntensity * pow(cosAlpha,5) / (distance*distance);
+		specular_color * LightColor * LightIntensity * pow(cosAlpha, minShininess - shininess * minShininess) / (distance*distance);
     
  //   color = vec3(1,0,0);
 

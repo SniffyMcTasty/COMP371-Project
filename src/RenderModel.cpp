@@ -162,7 +162,7 @@ namespace TAPP {
     }
     
 
-void RenderModel::render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity){
+void RenderModel::render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity, glm::vec3 diffuse, glm::vec3 ambient, glm::vec3 specular){
         
         glDisable(GL_CULL_FACE); 
         
@@ -210,17 +210,17 @@ void RenderModel::render(glm::float32 shininess, glm::float32 customProperty, gl
 //        glm::vec3 lightPos = glm::vec3(0,0,0);
 //        glm::vec3 lightColor = glm::vec3(1,1,1);
 //        glm::float64 lightIntensity = 1.0;
-        glm::vec3 dc = glm::vec3(1, 0, 0);
-        glm::vec3 ac = glm::vec3(0.1, 0.1, 0.1) * dc;
-        glm::vec3 sc = glm::vec3(0.3, 0.3, 0.3);
+//        glm::vec3 dc = glm::vec3(1, 0, 0);
+//        glm::vec3 ac = glm::vec3(0.1, 0.1, 0.1) * dc;
+//        glm::vec3 sc = glm::vec3(0.3, 0.3, 0.3);
 //        glm::float64 shininess = 1.0;
 //        glm::float64 customProperty = 0.0;
         glUniformMatrix4fv(shaderMVP, 1, GL_FALSE, &MVP[0][0]);
         glUniformMatrix4fv(shaderV, 1, GL_FALSE, &m_ViewMatrix[0][0]);
         // Uniform variables for the colors
-        glUniform3f(shaderDiffuse, dc.x, dc.y, dc.z);
-        glUniform3f(shaderAmbient, ac.x, ac.y, ac.z);
-        glUniform3f(shaderSpecular, sc.x, sc.y, sc.z);
+        glUniform3f(shaderDiffuse, diffuse.x, diffuse.y, diffuse.z);
+        glUniform3f(shaderAmbient, ambient.x, ambient.y, ambient.z);
+        glUniform3f(shaderSpecular, specular.x, specular.y, specular.z);
         // Uniform variable for the light
         glUniform3f(shaderLightPos, lightPos.x, lightPos.y, lightPos.z);
         glUniform3f(shaderLightColor, lightColor.x, lightColor.y, lightColor.z);

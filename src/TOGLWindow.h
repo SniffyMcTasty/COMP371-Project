@@ -46,7 +46,7 @@ public:
     
     void keypress(int key, int state, int mods);
 
-    void render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity);
+    void render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity, glm::vec3 diffuse, glm::vec3 ambient, glm::vec3 specular);
     
     void resize(int w, int h);
     

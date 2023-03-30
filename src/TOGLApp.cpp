@@ -57,9 +57,9 @@ namespace TAPP {
         m_window.init(vertexShader, fragmentShader);
         string filename = "teapot1", vsName = "Phong.vertexshader", fsName = "Phong.fragmentshader";
         glm::float32 shininess = 0.5, customProperty = 0.5;
-        glm::vec3 lightPos = glm::vec3(0,0,0);
-        glm::vec3 lightColor = glm::vec3(1,1,1);
+        glm::vec3 lightPos = glm::vec3(0,0,0), lightColor = glm::vec3(1,1,1);
         glm::float32 lightIntensity = 1.0;
+        glm::vec3 diffuseColor = glm::vec3(1, 0, 0), ambientColor = glm::vec3(0.1, 0.1, 0.1) * diffuseColor, specularColor = glm::vec3(0.3, 0.3, 0.3);
 
         do {
             glfwPollEvents();
@@ -73,7 +73,7 @@ namespace TAPP {
             ImGui::NewFrame();
 
             for(int i=0;i<m_window.m_layers.size();++i){
-                m_window.m_layers[i]->render(shininess, customProperty, lightPos, lightColor, lightIntensity);
+                m_window.m_layers[i]->render(shininess, customProperty, lightPos, lightColor, lightIntensity, diffuseColor, ambientColor, specularColor);
             }
 
             // Model selection window
@@ -189,6 +189,13 @@ namespace TAPP {
             ImGui::SliderFloat3("Light position", &lightPos[0], -10.0f, 10.0f);
             ImGui::SliderFloat3("Light color", &lightColor[0], 0.0f, 1.0f);
             ImGui::SliderFloat("Light intensity", &lightIntensity, 0.0f, 1.0f);
+            ImGui::End();
+
+            // Object colors window
+            ImGui::Begin("Object colors");
+            ImGui::ColorEdit3("Ambient color", &ambientColor[0]);
+            ImGui::ColorEdit3("Diffuse color", &diffuseColor[0]);
+            ImGui::ColorEdit3("Specular color", &specularColor[0]);
             ImGui::End();
 
             // Render ImGui

@@ -10,54 +10,69 @@ in vec3 LightDirection_cameraspace;
 out vec3 color;
 
 // Values that stay constant for the whole mesh.
+uniform mat4 MVP;
 uniform vec3 LightPosition_worldspace;
 uniform vec3 diffuse_color;
-//uniform float shininess;
-//uniform float reflection;
-//uniform float roughness;
-uniform samplerCube skybox;
 
-// Schlick approximation for the fresnel effect
-vec3 fresnelSchlick(float cosTheta, vec3 F0) {
-    return F0 + (1.0 - F0) * pow(1.0 - cosTheta, 5.0);
+const float PI = 3.14159265359;
+
+// Perlin noise function
+float noise(vec3 p) {
+    vec3 i = floor(p);
+    vec3 f = fract(p);
+    vec3 u = f*f*(3.0-2.0*f);
+    return mix(mix(mix(dot(vec3(0,0,0), f - vec3(0,0,0)),
+    dot(vec3(1,0,0), f - vec3(1,0,0)), u.x),
+    mix(dot(vec3(0,1,0), f - vec3(0,1,0)),
+    dot(vec3(1,1,0), f - vec3(1,1,0)), u.x), u.y),
+    mix(mix(dot(vec3(0,0,1), f - vec3(0,0,1)),
+    dot(vec3(1,0,1), f - vec3(1,0,1)), u.x),
+    mix(dot(vec3(0,1,1), f - vec3(0,1,1)),
+    dot(vec3(1,1,1), f - vec3(1,1,1)), u.x), u.y), u.z);
 }
 
 void main() {
-    float shininess = 0.0;
-    float reflection = 0.0;
-    float roughness = 0.0;
 
-    // Normalize cameraspace normal
-    vec3 Normal_cameraspace_normalized = normalize(Normal_cameraspace);
+    float shininess = 0.5;
+    if (shininess > 1.0) shininess = 1.0;
+    else if (shininess <= 0.0) shininess = 0.001;
+    float roughness = 0.5;
+    if (roughness > 1.0) roughness = 1.0;
+    else if (roughness < 0.0) roughness = 0.0;
 
-    // Compute the intensity
-    float intensity = dot(Normal_cameraspace_normalized, normalize(LightDirection_cameraspace));
+    // Light emission properties
+    // You probably want to put them as uniforms
+    vec3 LightColor = vec3(1,1,1);
+    float LightPower = 1.0f;
 
-    // If the normal and the light direction are not opposite to each other
-    // then we must clamp the intensity to 0.0
-    intensity = clamp(intensity, 0.0, 1.0);
+    // Compute surface normal
+    vec3 n = normalize(Normal_cameraspace);
 
-    // Compute the color
-    vec3 diffuse = diffuse_color * intensity;
+    // Compute surface roughness using Perlin noise
+    roughness = noise(Position_worldspace * (50 - 40 * roughness)) * shininess*0.1;
 
-    // Compute the reflection vector
-    vec3 reflectDir = reflect(-normalize(EyeDirection_cameraspace), Normal_cameraspace_normalized);
+    // Compute specular lighting using the Cook-Torrance model
+    vec3 l = normalize(LightDirection_cameraspace);
+    vec3 v = normalize(EyeDirection_cameraspace);
+    vec3 h = normalize(l + v);
+    float NdotH = max(0.0, abs(dot(n, h)));
+    float NdotL = max(0.0, abs(dot(n, l)));
+    float NdotV = max(0.0, abs(dot(n, v)));
+    float VdotH = max(0.0, abs(dot(v, h)));
+    // Microfacet distribution function by Beckman
+    float D = (1.0 / (4.0 * roughness * roughness * pow(NdotH, 4.0))) * exp((NdotH * NdotH - 1.0) / (roughness * roughness * NdotH * NdotH));
+    float G = min(1.0, min(2.0 * NdotH * NdotV / VdotH, 2.0 * NdotH * NdotL / VdotH));
+    float F = pow(1.0 - VdotH, 5.0);
+    F *= 0.2;
+    F += 0.8;
+    float specular = D * G * F / (4.0 * NdotL * NdotV);
 
-    // Compute the fresnel factor using Schlick's approximation
-    vec3 F0 = vec3(0.04);
-    vec3 fresnel = fresnelSchlick(clamp(dot(reflectDir, EyeDirection_cameraspace), 0.0, 1.0), F0);
+    // Compute diffuse lighting
+    float diffuse = NdotL;
 
-    // Compute the reflection color
-    vec3 reflectionColor = vec3(0.0);
-    if (reflection > 0.0) {
-        reflectionColor = texture(skybox, reflectDir).rgb;
-        reflectionColor = mix(vec3(1.0), reflectionColor, reflection);
-    }
+    // Add some ambient lighting
+    color = vec3(0.1, 0.1, 0.1) * diffuse_color;
 
-    // Mix the reflection and diffuse color based on roughness
-    color = mix(diffuse, reflectionColor, pow(1.0 - roughness, 2.0));
-
-    // Add some specular
-    float specular = pow(clamp(dot(Normal_cameraspace_normalized, normalize(LightDirection_cameraspace + EyeDirection_cameraspace)), 0.0, 1.0), shininess);
-    color += vec3(1.0) * specular * fresnel;
+    // Compute final color
+    color += diffuse_color * diffuse * LightColor + LightColor * vec3(0.3,0.3,0.3) * (0.2 + specular * 0.8);
 }

@@ -38,7 +38,7 @@ void main(){
 	//  - light is at the vertical of the triangle -> 1
 	//  - light is perpendicular to the triangle -> 0
 	//  - light is behind the triangle -> 0
-	float cosTheta = clamp( dot( n,l ), 0,1 );
+	float cosTheta = clamp( abs(dot( n,l )), 0,1 );
 	
 	// Eye vector (towards the camera)
 	vec3 E = normalize(EyeDirection_cameraspace);
@@ -48,7 +48,7 @@ void main(){
 	// clamped to 0
 	//  - Looking into the reflection -> 1
 	//  - Looking elsewhere -> < 1
-	float cosAlpha = clamp( dot( E,R ), 0,1 );
+	float cosAlpha = clamp( abs(dot( E,R )), 0,1 );
 	
 	color = 
 		// Ambient : simulates indirect lighting

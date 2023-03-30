@@ -21,7 +21,7 @@ void main() {
     float intensity = dot(Normal_cameraspace, lightDirection);
 
     // Clamp intensity from 0 to 1
-    intensity = clamp(intensity, 0, 1);
+    intensity = clamp(abs(intensity), 0, 1);
 
     // Intensity is the same for all colors
     vec3 result = diffuse_color * intensity;
@@ -34,7 +34,7 @@ void main() {
 
     // Add some specular
     float specular = dot(Normal_cameraspace, normalize(LightDirection_cameraspace + EyeDirection_cameraspace));
-    specular = clamp(specular, 0, 1);
+    specular = clamp(abs(specular), 0, 1);
     specular = pow(specular, 4);
-    color += vec3(0.5, 0.5, 0.5) * specular;
+    color += vec3(0.3, 0.3, 0.3) * specular;
 }

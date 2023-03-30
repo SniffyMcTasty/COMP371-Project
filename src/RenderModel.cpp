@@ -162,7 +162,7 @@ namespace TAPP {
     }
     
 
-void RenderModel::render(glm::float32 shininess, glm::float32 customProperty){
+void RenderModel::render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity){
         
         glDisable(GL_CULL_FACE); 
         
@@ -207,9 +207,9 @@ void RenderModel::render(glm::float32 shininess, glm::float32 customProperty){
             cout<<"Err B3"<<endl;
         }
         
-        glm::vec3 lightPos = glm::vec3(0,0,0);
-        glm::vec3 lightColor = glm::vec3(1,1,1);
-        glm::float64 lightIntensity = 1.0;
+//        glm::vec3 lightPos = glm::vec3(0,0,0);
+//        glm::vec3 lightColor = glm::vec3(1,1,1);
+//        glm::float64 lightIntensity = 1.0;
         glm::vec3 dc = glm::vec3(1, 0, 0);
         glm::vec3 ac = glm::vec3(0.1, 0.1, 0.1) * dc;
         glm::vec3 sc = glm::vec3(0.3, 0.3, 0.3);

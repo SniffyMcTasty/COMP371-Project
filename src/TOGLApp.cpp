@@ -57,6 +57,9 @@ namespace TAPP {
         m_window.init(vertexShader, fragmentShader);
         string filename = "teapot1", vsName = "Phong.vertexshader", fsName = "Phong.fragmentshader";
         glm::float32 shininess = 0.5, customProperty = 0.5;
+        glm::vec3 lightPos = glm::vec3(0,0,0);
+        glm::vec3 lightColor = glm::vec3(1,1,1);
+        glm::float32 lightIntensity = 1.0;
 
         do {
             glfwPollEvents();
@@ -70,7 +73,7 @@ namespace TAPP {
             ImGui::NewFrame();
 
             for(int i=0;i<m_window.m_layers.size();++i){
-                m_window.m_layers[i]->render(shininess, customProperty);
+                m_window.m_layers[i]->render(shininess, customProperty, lightPos, lightColor, lightIntensity);
             }
 
             // Model selection window
@@ -179,6 +182,13 @@ namespace TAPP {
             ImGui::Begin("Properties");
             ImGui::SliderFloat("Shininess", &shininess, 0.001f, 1.0f);
             ImGui::SliderFloat("Custom property", &customProperty, 0.0f, 1.0f);
+            ImGui::End();
+
+            // Light properties window
+            ImGui::Begin("Light properties");
+            ImGui::SliderFloat3("Light position", &lightPos[0], -10.0f, 10.0f);
+            ImGui::SliderFloat3("Light color", &lightColor[0], 0.0f, 1.0f);
+            ImGui::SliderFloat("Light intensity", &lightIntensity, 0.0f, 1.0f);
             ImGui::End();
 
             // Render ImGui

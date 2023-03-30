@@ -10,6 +10,7 @@ find_package(OpenGL REQUIRED COMPONENTS OpenGL)
 find_package(GLEW REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
+find_package(Stb REQUIRED)
 
 set(ALL_LIBS
         OpenGL::GL
@@ -18,6 +19,7 @@ set(ALL_LIBS
         glfw
         glm::glm
         nfd
+        ${Stb_INCLUDE_DIRS}
         )
 
 add_definitions(

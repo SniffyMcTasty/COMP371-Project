@@ -1,5 +1,6 @@
 #ifndef VSPHERE_H
 #define VSPHERE_H
+
 #include <GL/glew.h>
 
 #include "RUIObject.h"

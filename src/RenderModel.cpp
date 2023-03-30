@@ -107,78 +107,6 @@ namespace TAPP {
         glBindVertexArray(0);
     }
 
-
-    // Load a single texture from a file and return its texture ID
-    GLuint loadTexture(const char* filename)
-    {
-        int width, height, channels;
-        unsigned char* image = stbi_load(filename, &width, &height, &channels, STBI_rgb_alpha);
-
-        GLuint textureID;
-        glGenTextures(1, &textureID);
-        glBindTexture(GL_TEXTURE_2D, textureID);
-
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
-        glGenerateMipmap(GL_TEXTURE_2D);
-
-        stbi_image_free(image);
-
-        return textureID;
-    }
-
-    // Load a skybox texture from 6 files and return its texture ID
-    GLuint loadSkyboxTexture(const char* colorFilename, const char* displacementFilename,
-                             const char* metalnessFilename, const char* normalDXFilename,
-                             const char* normalGLFilename, const char* roughnessFilename)
-    {
-        GLuint textureID;
-        glGenTextures(1, &textureID);
-        glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
-
-        // Load each face of the cube map
-        GLuint faces[] = {
-                GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X,
-                GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y,
-                GL_TEXTURE_CUBE_MAP_POSITIVE_Z, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z
-        };
-
-        for (int i = 0; i < 6; i++)
-        {
-            GLuint textureFaceID;
-            switch (i)
-            {
-                case 0: textureFaceID = loadTexture(colorFilename); break;
-                case 1: textureFaceID = loadTexture(displacementFilename); break;
-                case 2: textureFaceID = loadTexture(metalnessFilename); break;
-                case 3: textureFaceID = loadTexture(normalDXFilename); break;
-                case 4: textureFaceID = loadTexture(normalGLFilename); break;
-                case 5: textureFaceID = loadTexture(roughnessFilename); break;
-            }
-
-            GLint w, h, format;
-            glGetTexLevelParameteriv(GL_TEXTURE_2D, 0, GL_TEXTURE_WIDTH, &w);
-            glGetTexLevelParameteriv(GL_TEXTURE_2D, 0, GL_TEXTURE_HEIGHT, &h);
-            glGetTexLevelParameteriv(GL_TEXTURE_2D, 0, GL_TEXTURE_INTERNAL_FORMAT, &format);
-            unsigned char* pixels = new unsigned char[w * h * 4];
-            glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
-            glTexImage2D(faces[i], 0, format, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
-            glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-            glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-            glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-            glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-            glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-
-            delete[] pixels;
-            glDeleteTextures(1, &textureFaceID);
-        }
-
-        glGenerateMipmap(GL_TEXTURE_CUBE_MAP);
-
-        return textureID;
-    }
-
-
-
     void RenderModel::init(std::string vertexShader, std::string fragmentShader){
         is_error();
         
@@ -203,28 +131,14 @@ namespace TAPP {
         // Get a handle for our "MVP" uniform
         shaderMVP = glGetUniformLocation(program, "MVP");
         shaderV = glGetUniformLocation(program, "V");
-        shaderLight = glGetUniformLocation(program, "LightPosition_worldspace");
+        shaderLightPos = glGetUniformLocation(program, "LightPosition_worldspace");
+        shaderLightColor = glGetUniformLocation(program, "LightColor");
+        shaderLightIntensity = glGetUniformLocation(program, "LightIntensity");
         shaderDiffuse = glGetUniformLocation(program, "diffuse_color");
-
-        // Load the cube map texture
-        GLuint textureID = loadSkyboxTexture("../assets/metal/Metal009_2K_Color.png",
-                                             "../assets/metal/Metal009_2K_Displacement.png",
-                                             "../assets/metal/Metal009_2K_Metalness.png",
-                                             "../assets/metal/Metal009_2K_NormalDX.png",
-                                             "../assets/metal/Metal009_2K_NormalGL.png",
-                                             "../assets/metal/Metal009_2K_Roughness.png");
-
-        // Load the cube map texture into OpenGL
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
-
-        // Set the texture wrapping/filtering options
-        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
+        shaderAmbient = glGetUniformLocation(program, "ambient_color");
+        shaderSpecular = glGetUniformLocation(program, "specular_color");
+        shaderShininess = glGetUniformLocation(program, "shininess");
+        shaderRoughness = glGetUniformLocation(program, "roughness");
 
         if(is_error()){
             cout<<"Err B"<<endl;
@@ -304,14 +218,27 @@ void RenderModel::render(){
         }
         
         glm::vec3 lightPos = glm::vec3(0,0,0);
+        glm::vec3 lightColor = glm::vec3(1,1,1);
+        glm::float64 lightIntensity = 1.0;
         glm::vec3 dc = glm::vec3(1, 0, 0);
+        glm::vec3 ac = glm::vec3(0.1, 0.1, 0.1) * dc;
+        glm::vec3 sc = glm::vec3(0.3, 0.3, 0.3);
+        glm::float64 shininess = 1.0;
+        glm::float64 roughness = 0.0;
         if(mode==0){
             glUniformMatrix4fv(shaderMVP, 1, GL_FALSE, &MVP[0][0]);
             glUniformMatrix4fv(shaderV, 1, GL_FALSE, &m_ViewMatrix[0][0]);
+            // Uniform variables for the colors
             glUniform3f(shaderDiffuse, dc.x, dc.y, dc.z);
-            glUniform3f(shaderLight, lightPos.x, lightPos.y, lightPos.z);
-            // Bind the texture to a uniform variable in the shader
-            glUniform1i(glGetUniformLocation(program, "skybox"), 0); // 0 = texture unit 0
+            glUniform3f(shaderAmbient, ac.x, ac.y, ac.z);
+            glUniform3f(shaderSpecular, sc.x, sc.y, sc.z);
+            // Uniform variable for the light
+            glUniform3f(shaderLightPos, lightPos.x, lightPos.y, lightPos.z);
+            glUniform3f(shaderLightColor, lightColor.x, lightColor.y, lightColor.z);
+            glUniform1f(shaderLightIntensity, lightIntensity);
+            // Uniform variable for the material
+//            glUniform1f(shaderShininess, shininess);
+//            glUniform1f(shaderRoughness, roughness);
         }
        
         if(is_error()){

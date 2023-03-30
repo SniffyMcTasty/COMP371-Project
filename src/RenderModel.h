@@ -33,8 +33,14 @@ namespace TAPP {
         
         GLuint shaderMVP;
         GLuint shaderV;
-        GLuint shaderLight;
+        GLuint shaderLightPos;
+        GLuint shaderLightColor;
+        GLuint shaderLightIntensity;
         GLuint shaderDiffuse;//diffuse color
+        GLuint shaderAmbient;//ambient color
+        GLuint shaderSpecular;//specular color
+        GLuint shaderShininess;//shininess
+        GLuint shaderRoughness;//roughness
 
         
         // shader program

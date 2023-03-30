@@ -12,7 +12,11 @@ out vec3 color;
 // Values that stay constant for the whole mesh.
 uniform mat4 MV;
 uniform vec3 LightPosition_worldspace;
+uniform vec3 LightColor;
+uniform float LightIntensity;
 uniform vec3 diffuse_color;
+uniform vec3 ambient_color;
+uniform vec3 specular_color;
 
 void main() {
 
@@ -24,10 +28,10 @@ void main() {
     intensity = clamp(abs(intensity), 0, 1);
 
     // Intensity is the same for all colors
-    vec3 result = diffuse_color * intensity;
+    vec3 result = diffuse_color * intensity * LightIntensity * LightColor;
 
     // Add some ambient
-    result += vec3(0.1, 0.1, 0.1);
+    result += ambient_color;
 
     // Send the color to the GPU
     color = result;
@@ -36,5 +40,5 @@ void main() {
     float specular = dot(Normal_cameraspace, normalize(LightDirection_cameraspace + EyeDirection_cameraspace));
     specular = clamp(abs(specular), 0, 1);
     specular = pow(specular, 4);
-    color += vec3(0.3, 0.3, 0.3) * specular;
+    color += specular_color * specular * LightIntensity * LightColor;
 }

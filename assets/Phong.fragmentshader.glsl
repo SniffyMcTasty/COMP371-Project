@@ -12,19 +12,13 @@ out vec3 color;
 // Values that stay constant for the whole mesh.
 uniform mat4 MV;
 uniform vec3 LightPosition_worldspace;
+uniform vec3 LightColor;
+uniform float LightIntensity;
 uniform vec3 diffuse_color;
+uniform vec3 ambient_color;
+uniform vec3 specular_color;
 
 void main(){
-
-	// Light emission properties
-	// You probably want to put them as uniforms
-	vec3 LightColor = vec3(1,1,1);
-	float LightPower = 1.0f;
-	
-	// Material properties
-    vec3 MaterialDiffuseColor = diffuse_color;
-	vec3 MaterialAmbientColor = vec3(0.1,0.1,0.1) * MaterialDiffuseColor;
-	vec3 MaterialSpecularColor = vec3(0.3,0.3,0.3);
 
 	// Distance to the light
 	float distance = length( LightPosition_worldspace - Position_worldspace );
@@ -52,11 +46,11 @@ void main(){
 	
 	color = 
 		// Ambient : simulates indirect lighting
-		MaterialAmbientColor +
+		ambient_color +
 		// Diffuse : "color" of the object
-		MaterialDiffuseColor * LightColor * LightPower * cosTheta /*/ (distance*distance) */+
+		diffuse_color * LightColor * LightIntensity * cosTheta /*/ (distance*distance) */+
 		// Specular : reflective highlight, like a mirror
-		MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha,5) / (distance*distance);
+		specular_color * LightColor * LightIntensity * pow(cosAlpha,5) / (distance*distance);
     
  //   color = vec3(1,0,0);
 

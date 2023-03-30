@@ -46,7 +46,7 @@ public:
     
     void keypress(int key, int state, int mods);
 
-    void render();
+    void render(glm::float32 shininess, glm::float32 customProperty);
     
     void resize(int w, int h);
     

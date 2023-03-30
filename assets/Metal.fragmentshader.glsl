@@ -16,6 +16,8 @@ uniform float LightIntensity;
 uniform vec3 diffuse_color;
 uniform vec3 ambient_color;
 uniform vec3 specular_color;
+uniform float shininess;
+uniform float custom_property;
 
 const float PI = 3.14159265359;
 
@@ -35,19 +37,17 @@ float noise(vec3 p) {
 }
 
 void main() {
-
-    float shininess = 0.5;
-    if (shininess > 1.0) shininess = 1.0;
-    else if (shininess <= 0.0) shininess = 0.001;
-    float roughness = 0.5;
-    if (roughness > 1.0) roughness = 1.0;
-    else if (roughness < 0.0) roughness = 0.0;
+    // Declare inner uniform modifiers
+    float inner_shininess = shininess;
+    if (inner_shininess > 1.0) inner_shininess = 1.0;
+    else if (inner_shininess <= 0.0) inner_shininess = 0.001;
+    float roughness = custom_property;
 
     // Compute surface normal
     vec3 n = normalize(Normal_cameraspace);
 
     // Compute surface roughness using Perlin noise
-    roughness = noise(Position_worldspace * (50 - 40 * roughness)) * shininess*0.1;
+    roughness = noise(Position_worldspace * (50 - 40 * roughness)) * inner_shininess*0.1;
 
     // Compute specular lighting using the Cook-Torrance model
     vec3 l = normalize(LightDirection_cameraspace);

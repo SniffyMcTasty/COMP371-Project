@@ -138,7 +138,7 @@ namespace TAPP {
         shaderAmbient = glGetUniformLocation(program, "ambient_color");
         shaderSpecular = glGetUniformLocation(program, "specular_color");
         shaderShininess = glGetUniformLocation(program, "shininess");
-        shaderRoughness = glGetUniformLocation(program, "roughness");
+        shaderCustomProperty = glGetUniformLocation(program, "custom_property");
 
         if(is_error()){
             cout<<"Err B"<<endl;
@@ -162,17 +162,7 @@ namespace TAPP {
     }
     
 
-void RenderModel::render(){
-    
-  //  render_general(0);
-
-   render_general(0);
-
-}
-
-
-
-    void RenderModel::render_general(int mode){
+void RenderModel::render(glm::float32 shininess, glm::float32 customProperty){
         
         glDisable(GL_CULL_FACE); 
         
@@ -223,32 +213,24 @@ void RenderModel::render(){
         glm::vec3 dc = glm::vec3(1, 0, 0);
         glm::vec3 ac = glm::vec3(0.1, 0.1, 0.1) * dc;
         glm::vec3 sc = glm::vec3(0.3, 0.3, 0.3);
-        glm::float64 shininess = 1.0;
-        glm::float64 roughness = 0.0;
-        if(mode==0){
-            glUniformMatrix4fv(shaderMVP, 1, GL_FALSE, &MVP[0][0]);
-            glUniformMatrix4fv(shaderV, 1, GL_FALSE, &m_ViewMatrix[0][0]);
-            // Uniform variables for the colors
-            glUniform3f(shaderDiffuse, dc.x, dc.y, dc.z);
-            glUniform3f(shaderAmbient, ac.x, ac.y, ac.z);
-            glUniform3f(shaderSpecular, sc.x, sc.y, sc.z);
-            // Uniform variable for the light
-            glUniform3f(shaderLightPos, lightPos.x, lightPos.y, lightPos.z);
-            glUniform3f(shaderLightColor, lightColor.x, lightColor.y, lightColor.z);
-            glUniform1f(shaderLightIntensity, lightIntensity);
-            // Uniform variable for the material
-//            glUniform1f(shaderShininess, shininess);
-//            glUniform1f(shaderRoughness, roughness);
-        }
+//        glm::float64 shininess = 1.0;
+//        glm::float64 customProperty = 0.0;
+        glUniformMatrix4fv(shaderMVP, 1, GL_FALSE, &MVP[0][0]);
+        glUniformMatrix4fv(shaderV, 1, GL_FALSE, &m_ViewMatrix[0][0]);
+        // Uniform variables for the colors
+        glUniform3f(shaderDiffuse, dc.x, dc.y, dc.z);
+        glUniform3f(shaderAmbient, ac.x, ac.y, ac.z);
+        glUniform3f(shaderSpecular, sc.x, sc.y, sc.z);
+        // Uniform variable for the light
+        glUniform3f(shaderLightPos, lightPos.x, lightPos.y, lightPos.z);
+        glUniform3f(shaderLightColor, lightColor.x, lightColor.y, lightColor.z);
+        glUniform1f(shaderLightIntensity, lightIntensity);
+        // Uniform variable for the material
+        glUniform1f(shaderShininess, shininess);
+        glUniform1f(shaderCustomProperty, customProperty);
        
         if(is_error()){
             cout<<"Err 3"<<endl;
-        }
-        
-        if(mode==1){
-            glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
-        } else {
-            glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
         }
     
         glDrawElements(GL_TRIANGLES, m_obj.faces.size()*3, GL_UNSIGNED_INT, 0);

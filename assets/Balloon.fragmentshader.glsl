@@ -17,12 +17,18 @@ uniform float LightIntensity;
 uniform vec3 diffuse_color;
 uniform vec3 ambient_color;
 uniform vec3 specular_color;
+uniform float shininess;
 
 void main() {
+    // Declare inner uniform modifiers
+    float inner_shininess = shininess;
+
+    if (inner_shininess > 1.0) inner_shininess = 1.0;
+    else if (inner_shininess <= 0.0) inner_shininess = 0.001;
 
     // Compute the intensity
     vec3 lightDirection = normalize(LightPosition_worldspace - Position_worldspace);
-    float intensity = dot(Normal_cameraspace, lightDirection);
+    float intensity = dot(Normal_cameraspace, LightDirection_cameraspace);
 
     // Clamp intensity from 0 to 1
     intensity = clamp(abs(intensity), 0, 1);
@@ -39,6 +45,6 @@ void main() {
     // Add some specular
     float specular = dot(Normal_cameraspace, normalize(LightDirection_cameraspace + EyeDirection_cameraspace));
     specular = clamp(abs(specular), 0, 1);
-    specular = pow(specular, 4);
+    specular = pow(specular, inner_shininess * 128);
     color += specular_color * specular * LightIntensity * LightColor;
 }

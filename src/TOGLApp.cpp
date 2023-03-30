@@ -56,6 +56,7 @@ namespace TAPP {
         string vertexShader = "../assets/Phong.vertexshader.glsl", fragmentShader = "../assets/Phong.fragmentshader.glsl";
         m_window.init(vertexShader, fragmentShader);
         string filename = "teapot1", vsName = "Phong.vertexshader", fsName = "Phong.fragmentshader";
+        glm::float32 shininess = 0.5, customProperty = 0.5;
 
         do {
             glfwPollEvents();
@@ -69,7 +70,7 @@ namespace TAPP {
             ImGui::NewFrame();
 
             for(int i=0;i<m_window.m_layers.size();++i){
-                m_window.m_layers[i]->render();
+                m_window.m_layers[i]->render(shininess, customProperty);
             }
 
             // Model selection window
@@ -141,35 +142,43 @@ namespace TAPP {
                     printf("Error: %s\n", NFD_GetError());
                 }
                 NFD_Quit();
-                if (result == NFD_CANCEL) break;
-                NFD_Init();
-                filter[0] = {"GLSL file", "fragmentshader.glsl"};
-                result = NFD_OpenDialog(&outPath, filter, 1, NULL);
-                if(result == NFD_OKAY) {
-                    // Load file
-                    puts("Success");
-                    puts(outPath);
-                    string temp = outPath;
+                if (result != NFD_CANCEL && result != NFD_ERROR) {
+                    NFD_Init();
+                    filter[0] = {"GLSL file", "fragmentshader.glsl"};
+                    result = NFD_OpenDialog(&outPath, filter, 1, NULL);
+                    if (result == NFD_OKAY) {
+                        // Load file
+                        puts("Success");
+                        puts(outPath);
+                        string temp = outPath;
 
-                    fragmentShader = temp;
+                        fragmentShader = temp;
 
-                    // Change name of shown file
-                    char *p = strtok(outPath, "\\");
-                    while(p != NULL) {
-                        temp = p;
-                        p = strtok(NULL, "\\");
+                        // Change name of shown file
+                        char *p = strtok(outPath, "\\");
+                        while (p != NULL) {
+                            temp = p;
+                            p = strtok(NULL, "\\");
+                        }
+                        fsName = temp.substr(0, temp.length() - 5);
+                        free(outPath);
+                    } else if (result == NFD_CANCEL) {
+                        puts("User cancelled");
+                    } else {
+                        printf("Error: %s\n", NFD_GetError());
                     }
-                    fsName = temp.substr(0, temp.length() - 5);
-                    free(outPath);
-                } else if(result == NFD_CANCEL) {
-                    puts("User cancelled");
-                } else {
-                    printf("Error: %s\n", NFD_GetError());
+                    NFD_Quit();
+                    if (result != NFD_CANCEL && result != NFD_ERROR) {
+                        m_window.init(vertexShader, fragmentShader);
+                    }
                 }
-                NFD_Quit();
-                if (result == NFD_CANCEL) break;
-                m_window.init(vertexShader, fragmentShader);
             }
+            ImGui::End();
+
+            // Property sliders window
+            ImGui::Begin("Properties");
+            ImGui::SliderFloat("Shininess", &shininess, 0.001f, 1.0f);
+            ImGui::SliderFloat("Custom property", &customProperty, 0.0f, 1.0f);
             ImGui::End();
 
             // Render ImGui

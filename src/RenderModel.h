@@ -40,7 +40,7 @@ namespace TAPP {
         GLuint shaderAmbient;//ambient color
         GLuint shaderSpecular;//specular color
         GLuint shaderShininess;//shininess
-        GLuint shaderRoughness;//roughness
+        GLuint shaderCustomProperty;//custom property
 
         
         // shader program
@@ -75,9 +75,7 @@ namespace TAPP {
         virtual void drag(double x, double y, int mods) ;
         virtual void resize(double x, double y);
         
-        virtual void render() ;
-        
-        void render_general(int mode);
+        virtual void render(glm::float32 shininess, glm::float32 customProperty) ;
         
         
         virtual void render_pick_select(PickDataback& ) ; // to see if we selected this object

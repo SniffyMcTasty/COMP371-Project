@@ -3,6 +3,12 @@
 
 #include <string>
 
+// Include GLM
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/intersect.hpp>
+
 namespace TAPP {
 
 class TOGWLayer {
@@ -27,7 +33,7 @@ public:
     
     
     virtual void resize(int w, int h)=0;
-    virtual void render() = 0;
+    virtual void render(glm::float32 shininess, glm::float32 customProperty) = 0;
 
     
 };

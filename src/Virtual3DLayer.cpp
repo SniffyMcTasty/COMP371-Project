@@ -219,7 +219,10 @@ namespace TAPP {
         
     }
     
-    void Virtual3DLayer::render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity, glm::vec3 diffuse, glm::vec3 ambient, glm::vec3 specular){
+    void Virtual3DLayer::render(glm::float32 shininess, glm::float32 customProperty,
+                                glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity,
+                                glm::vec3 diffuse, glm::vec3 ambient, glm::vec3 specular,
+                                glm::float32 ambient_intensity, glm::float32 diffuse_intensity, glm::float32 specular_intensity){
     
         is_error();
         
@@ -247,7 +250,10 @@ namespace TAPP {
             m_objects[i]->m_wsize[0] = m_camera.tball.scrWidth;
             m_objects[i]->m_wsize[1] = m_camera.tball.scrHeight;
             
-            m_objects[i]->render(shininess, customProperty, lightPos, lightColor, lightIntensity, diffuse, ambient, specular);
+            m_objects[i]->render(shininess, customProperty,
+                                 lightPos, lightColor, lightIntensity,
+                                 diffuse, ambient, specular,
+                                 ambient_intensity, diffuse_intensity, specular_intensity);
         }
 
     }

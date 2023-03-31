@@ -6,17 +6,19 @@ in vec3 Normal_cameraspace;
 in vec3 EyeDirection_cameraspace;
 in vec3 LightDirection_cameraspace;
 
-// Ouput data
+// Output data
 out vec3 color;
 
 // Values that stay constant for the whole mesh.
-uniform mat4 MV;
 uniform vec3 LightPosition_worldspace;
 uniform vec3 LightColor;
 uniform float LightIntensity;
 uniform vec3 diffuse_color;
 uniform vec3 ambient_color;
 uniform vec3 specular_color;
+uniform float ambient_intensity;
+uniform float specular_intensity;
+uniform float diffuse_intensity;
 uniform float shininess;
 
 void main(){
@@ -48,11 +50,11 @@ void main(){
 	int minShininess = 128;
 	color = 
 		// Ambient : simulates indirect lighting
-		ambient_color +
+		ambient_color * ambient_intensity +
 		// Diffuse : "color" of the object
-		diffuse_color * LightColor * LightIntensity * cosTheta /*/ (distance*distance) */+
+		diffuse_color * LightColor * LightIntensity * cosTheta * diffuse_intensity +
 		// Specular : reflective highlight, like a mirror
-		specular_color * LightColor * LightIntensity * pow(cosAlpha, minShininess - shininess * minShininess) / (distance*distance);
+		specular_color * LightColor * LightIntensity * pow(cosAlpha, minShininess - shininess * minShininess) * specular_intensity / (distance*distance);
     
  //   color = vec3(1,0,0);
 

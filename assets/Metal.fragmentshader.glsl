@@ -6,7 +6,7 @@ in vec3 Normal_cameraspace;
 in vec3 EyeDirection_cameraspace;
 in vec3 LightDirection_cameraspace;
 
-// Ouput data
+// Output data
 out vec3 color;
 
 // Values that stay constant for the whole mesh.
@@ -16,6 +16,9 @@ uniform float LightIntensity;
 uniform vec3 diffuse_color;
 uniform vec3 ambient_color;
 uniform vec3 specular_color;
+uniform float ambient_intensity;
+uniform float specular_intensity;
+uniform float diffuse_intensity;
 uniform float shininess;
 uniform float custom_property;
 
@@ -42,14 +45,13 @@ void main() {
     float distance = length(LightPosition_worldspace - Position_worldspace);
 
     // Declare inner uniform modifiers
-    float inner_shininess = shininess;
     float roughness = custom_property;
 
     // Compute surface normal
     vec3 n = normalize(Normal_cameraspace);
 
     // Compute surface roughness using Perlin noise
-    roughness = noise(Position_worldspace * (50 - 40 * roughness)) * 0.1 * inner_shininess;
+    roughness = noise(Position_worldspace * (50 - 40 * roughness)) * 0.1 * shininess;
 
     // Compute specular lighting using the Cook-Torrance model
     vec3 l = normalize(LightDirection_cameraspace);
@@ -70,8 +72,7 @@ void main() {
     float diffuse = NdotL;
 
     // Add some ambient lighting
-    color = ambient_color;
-
-    // Compute final color
-    color += diffuse_color * diffuse * LightColor * LightIntensity + LightColor * LightIntensity * specular_color * (inner_shininess + specular * inner_shininess) / (distance * distance);
+    color = ambient_color * ambient_intensity +
+        diffuse_color * diffuse * LightColor * LightIntensity * diffuse_intensity +
+        specular_color * LightColor * LightIntensity * (shininess + specular * shininess) * specular_intensity / (distance * distance);
 }

@@ -1,0 +1,56 @@
+#version 330 core
+
+// Interpolated values from the vertex shaders
+in vec3 Position_worldspace;
+in vec3 Normal_cameraspace;
+in vec3 EyeDirection_cameraspace;
+in vec3 LightDirection_cameraspace;
+
+// Output data
+out vec3 color;
+
+// Values that stay constant for the whole mesh.
+uniform vec3 LightPosition_worldspace;
+uniform vec3 LightColor;
+uniform float LightIntensity;
+uniform vec3 diffuse_color;
+uniform vec3 ambient_color;
+uniform vec3 specular_color;
+uniform float ambient_intensity;
+uniform float specular_intensity;
+uniform float diffuse_intensity;
+uniform float custom_property;
+uniform float shininess;
+
+void main(){
+
+    // Normal of the computed fragment, in camera space
+    vec3 n = normalize( Normal_cameraspace );
+    // Direction of the light (from the fragment to the light)
+    vec3 l = normalize( LightDirection_cameraspace );
+    // Cosine of the angle between the normal and the light direction,
+    // clamped above 0
+    //  - light is at the vertical of the triangle -> 1
+    //  - light is perpendicular to the triangle -> 0
+    //  - light is behind the triangle -> 0
+    float cosTheta = clamp( abs(dot( n,l )), 0,1 );
+
+    // Toon shading
+    float diffuse;
+    if (cosTheta > 0.95 / shininess) {
+        diffuse = 1.0;
+    } else if (cosTheta > 0.8 / shininess) {
+        diffuse = 0.8;
+    } else if (cosTheta > 0.6 / shininess) {
+        diffuse = 0.6;
+    } else if (cosTheta > 0.4 / shininess) {
+        diffuse =  0.4;
+    } else if (cosTheta > 0.2 / shininess){
+        diffuse = 0.2;
+    } else {
+        diffuse = 0;
+    }
+
+    color = ambient_color * ambient_intensity + diffuse * diffuse_color * LightIntensity * LightColor * diffuse_intensity;
+
+}

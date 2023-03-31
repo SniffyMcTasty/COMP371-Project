@@ -33,7 +33,10 @@ public:
     
     
     virtual void resize(int w, int h)=0;
-    virtual void render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity, glm::vec3 diffuse, glm::vec3 ambient, glm::vec3 specular) = 0;
+    virtual void render(glm::float32 shininess, glm::float32 customProperty,
+                        glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity,
+                        glm::vec3 diffuse, glm::vec3 ambient, glm::vec3 specular,
+                        glm::float32 ambient_intensity, glm::float32 diffuse_intensity, glm::float32 specular_intensity) = 0;
 
     
 };

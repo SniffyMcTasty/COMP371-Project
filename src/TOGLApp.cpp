@@ -60,6 +60,7 @@ namespace TAPP {
         glm::vec3 lightPos = glm::vec3(0,0,0), lightColor = glm::vec3(1,1,1);
         glm::float32 lightIntensity = 1.0;
         glm::vec3 diffuseColor = glm::vec3(1, 0, 0), ambientColor = glm::vec3(0.1, 0.1, 0.1) * diffuseColor, specularColor = glm::vec3(0.3, 0.3, 0.3);
+        glm::float32 diffuseIntensity = 1.0, ambientIntensity = 0.1, specularIntensity = 0.3;
 
         do {
             glfwPollEvents();
@@ -73,7 +74,10 @@ namespace TAPP {
             ImGui::NewFrame();
 
             for(int i=0;i<m_window.m_layers.size();++i){
-                m_window.m_layers[i]->render(shininess, customProperty, lightPos, lightColor, lightIntensity, diffuseColor, ambientColor, specularColor);
+                m_window.m_layers[i]->render(shininess, customProperty,
+                                             lightPos, lightColor, lightIntensity,
+                                             diffuseColor,ambientColor, specularColor,
+                                             ambientIntensity, diffuseIntensity, specularIntensity);
             }
 
             // Model selection window
@@ -187,7 +191,7 @@ namespace TAPP {
             // Light properties window
             ImGui::Begin("Light properties");
             ImGui::SliderFloat3("Light position", &lightPos[0], -10.0f, 10.0f);
-            ImGui::SliderFloat3("Light color", &lightColor[0], 0.0f, 1.0f);
+            ImGui::ColorEdit3("Light color", &lightColor[0]);
             ImGui::SliderFloat("Light intensity", &lightIntensity, 0.0f, 1.0f);
             ImGui::End();
 
@@ -196,6 +200,13 @@ namespace TAPP {
             ImGui::ColorEdit3("Ambient color", &ambientColor[0]);
             ImGui::ColorEdit3("Diffuse color", &diffuseColor[0]);
             ImGui::ColorEdit3("Specular color", &specularColor[0]);
+            ImGui::End();
+
+            // Color intensity window
+            ImGui::Begin("Color intensity");
+            ImGui::SliderFloat("Ambient intensity", &ambientIntensity, 0.0f, 1.0f);
+            ImGui::SliderFloat("Diffuse intensity", &diffuseIntensity, 0.0f, 1.0f);
+            ImGui::SliderFloat("Specular intensity", &specularIntensity, 0.0f, 1.0f);
             ImGui::End();
 
             // Render ImGui

@@ -139,6 +139,9 @@ namespace TAPP {
         shaderSpecular = glGetUniformLocation(program, "specular_color");
         shaderShininess = glGetUniformLocation(program, "shininess");
         shaderCustomProperty = glGetUniformLocation(program, "custom_property");
+        shaderAmbientIntensity = glGetUniformLocation(program, "ambient_intensity");
+        shaderDiffuseIntensity = glGetUniformLocation(program, "diffuse_intensity");
+        shaderSpecularIntensity = glGetUniformLocation(program, "specular_intensity");
 
         if(is_error()){
             cout<<"Err B"<<endl;
@@ -160,9 +163,12 @@ namespace TAPP {
         glDeleteVertexArrays(1, &VertexArrayID);
          */
     }
-    
 
-void RenderModel::render(glm::float32 shininess, glm::float32 customProperty, glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity, glm::vec3 diffuse, glm::vec3 ambient, glm::vec3 specular){
+
+void RenderModel::render(glm::float32 shininess, glm::float32 customProperty,
+                         glm::vec3 lightPos, glm::vec3 lightColor, glm::float32 lightIntensity,
+                         glm::vec3 diffuse, glm::vec3 ambient, glm::vec3 specular,
+                         glm::float32 ambient_intensity, glm::float32 diffuse_intensity, glm::float32 specular_intensity){
         
         glDisable(GL_CULL_FACE); 
         
@@ -206,15 +212,7 @@ void RenderModel::render(glm::float32 shininess, glm::float32 customProperty, gl
         if(is_error()){
             cout<<"Err B3"<<endl;
         }
-        
-//        glm::vec3 lightPos = glm::vec3(0,0,0);
-//        glm::vec3 lightColor = glm::vec3(1,1,1);
-//        glm::float64 lightIntensity = 1.0;
-//        glm::vec3 dc = glm::vec3(1, 0, 0);
-//        glm::vec3 ac = glm::vec3(0.1, 0.1, 0.1) * dc;
-//        glm::vec3 sc = glm::vec3(0.3, 0.3, 0.3);
-//        glm::float64 shininess = 1.0;
-//        glm::float64 customProperty = 0.0;
+
         glUniformMatrix4fv(shaderMVP, 1, GL_FALSE, &MVP[0][0]);
         glUniformMatrix4fv(shaderV, 1, GL_FALSE, &m_ViewMatrix[0][0]);
         // Uniform variables for the colors
@@ -228,6 +226,10 @@ void RenderModel::render(glm::float32 shininess, glm::float32 customProperty, gl
         // Uniform variable for the material
         glUniform1f(shaderShininess, shininess);
         glUniform1f(shaderCustomProperty, customProperty);
+        // Uniform variables for color intensities
+        glUniform1f(shaderAmbientIntensity, ambient_intensity);
+        glUniform1f(shaderDiffuseIntensity, diffuse_intensity);
+        glUniform1f(shaderSpecularIntensity, specular_intensity);
        
         if(is_error()){
             cout<<"Err 3"<<endl;

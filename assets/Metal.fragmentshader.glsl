@@ -37,6 +37,10 @@ float noise(vec3 p) {
 }
 
 void main() {
+
+    // Distance to the light
+    float distance = length(LightPosition_worldspace - Position_worldspace);
+
     // Declare inner uniform modifiers
     float inner_shininess = shininess;
     float roughness = custom_property;
@@ -45,7 +49,7 @@ void main() {
     vec3 n = normalize(Normal_cameraspace);
 
     // Compute surface roughness using Perlin noise
-    roughness = noise(Position_worldspace * (50 - 40 * roughness)) * inner_shininess*0.1;
+    roughness = noise(Position_worldspace * (50 - 40 * roughness)) * 0.1 * inner_shininess;
 
     // Compute specular lighting using the Cook-Torrance model
     vec3 l = normalize(LightDirection_cameraspace);
@@ -69,5 +73,5 @@ void main() {
     color = ambient_color;
 
     // Compute final color
-    color += diffuse_color * diffuse * LightColor * LightIntensity + LightColor * LightIntensity * specular_color * (0.2 + specular * 0.8);
+    color += diffuse_color * diffuse * LightColor * LightIntensity + LightColor * LightIntensity * specular_color * (inner_shininess + specular * inner_shininess) / (distance * distance);
 }

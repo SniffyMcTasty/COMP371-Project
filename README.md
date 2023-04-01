@@ -10,4 +10,4 @@ If using the docker image from https://github.com/tiperiu/COMP371_dockerimage, n
 
 ## Description
 
-To have a full description and demo of what the code does, please refer to the [self-contained web page](./doc/index.html) within this repo.
+To have a full description and demo of what the code does, please refer to the [self-contained web page](./web/index.html) within this repo.

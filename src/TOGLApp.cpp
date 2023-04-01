@@ -53,14 +53,14 @@ namespace TAPP {
    
     void TOGLApp::run(){
 
-        string vertexShader = "../assets/Phong.vertexshader.glsl", fragmentShader = "../assets/Phong.fragmentshader.glsl";
+        string vertexShader = vertexShaderInit, fragmentShader = fragmentShaderInit;
         m_window.init(vertexShader, fragmentShader);
-        string filename = "teapot1", vsName = "Phong.vertexshader", fsName = "Phong.fragmentshader";
-        glm::float32 shininess = 0.5, customProperty = 0.5;
-        glm::vec3 lightPos = glm::vec3(0,0,0), lightColor = glm::vec3(1,1,1);
-        glm::float32 lightIntensity = 1.0;
-        glm::vec3 diffuseColor = glm::vec3(1, 0, 0), ambientColor = glm::vec3(0.1, 0.1, 0.1) * diffuseColor, specularColor = glm::vec3(0.3, 0.3, 0.3);
-        glm::float32 diffuseIntensity = 1.0, ambientIntensity = 0.1, specularIntensity = 0.3;
+        string filename = filenameInit, vsName = vsNameInit, fsName = fsNameInit;
+        glm::float32 shininess = shininessInit, customProperty = customPropertyInit;
+        glm::vec3 lightPos = lightPosInit, lightColor = lightColorInit;
+        glm::float32 lightIntensity = lightIntensityInit;
+        glm::vec3 diffuseColor = diffuseColorInit, ambientColor = ambientColorInit, specularColor = specularColorInit;
+        glm::float32 diffuseIntensity = diffuseIntensityInit, ambientIntensity = ambientIntensityInit, specularIntensity = specularIntensityInit;
 
         do {
             glfwPollEvents();
@@ -116,6 +116,8 @@ namespace TAPP {
                 }
                 NFD_Quit();
             }
+            ImGui::SameLine();
+            if (ImGui::Button("Reset")) filename = filenameInit;
             ImGui::End();
 
             // Shaders selection window
@@ -180,12 +182,22 @@ namespace TAPP {
                     }
                 }
             }
+            ImGui::SameLine();
+            if (ImGui::Button("Reset")) {
+                vertexShader = vsNameInit;
+                fragmentShader = fsNameInit;
+                m_window.init(vertexShader, fragmentShader);
+            }
             ImGui::End();
 
             // Property sliders window
             ImGui::Begin("Properties");
             ImGui::SliderFloat("Shininess", &shininess, 0.001f, 1.0f);
             ImGui::SliderFloat("Custom property", &customProperty, 0.0f, 1.0f);
+            if (ImGui::Button("Reset")) {
+                shininess = shininessInit;
+                customProperty = customPropertyInit;
+            }
             ImGui::End();
 
             // Light properties window
@@ -193,6 +205,11 @@ namespace TAPP {
             ImGui::SliderFloat3("Light position", &lightPos[0], -10.0f, 10.0f);
             ImGui::ColorEdit3("Light color", &lightColor[0]);
             ImGui::SliderFloat("Light intensity", &lightIntensity, 0.0f, 1.0f);
+            if (ImGui::Button("Reset")) {
+                lightPos = lightPosInit;
+                lightColor = lightColorInit;
+                lightIntensity = lightIntensityInit;
+            }
             ImGui::End();
 
             // Object colors window
@@ -200,6 +217,11 @@ namespace TAPP {
             ImGui::ColorEdit3("Ambient color", &ambientColor[0]);
             ImGui::ColorEdit3("Diffuse color", &diffuseColor[0]);
             ImGui::ColorEdit3("Specular color", &specularColor[0]);
+            if (ImGui::Button("Reset")) {
+                ambientColor = ambientColorInit;
+                diffuseColor = diffuseColorInit;
+                specularColor = specularColorInit;
+            }
             ImGui::End();
 
             // Color intensity window
@@ -207,6 +229,11 @@ namespace TAPP {
             ImGui::SliderFloat("Ambient intensity", &ambientIntensity, 0.0f, 1.0f);
             ImGui::SliderFloat("Diffuse intensity", &diffuseIntensity, 0.0f, 1.0f);
             ImGui::SliderFloat("Specular intensity", &specularIntensity, 0.0f, 1.0f);
+            if (ImGui::Button("Reset")) {
+                ambientIntensity = ambientIntensityInit;
+                diffuseIntensity = diffuseIntensityInit;
+                specularIntensity = specularIntensityInit;
+            }
             ImGui::End();
 
             // Render ImGui
@@ -216,9 +243,7 @@ namespace TAPP {
             glfwGetFramebufferSize(m_window.m_window, &m_window.m_width, &m_window.m_height);
             glViewport(0, 0, m_window.m_width, m_window.m_height);
             glfwSwapBuffers(m_window.m_window);
-
-//            m_window.render();
-//            glfwPollEvents();
+            
         } // Check if the ESC key was pressed or the window was closed
         while (glfwGetKey(m_window.m_window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
                glfwWindowShouldClose(m_window.m_window) == 0);

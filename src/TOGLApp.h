@@ -57,6 +57,13 @@ public:
     static double gx;
     static double gy;
 
+    string vertexShaderInit = "../assets/Phong.vertexshader.glsl", fragmentShaderInit = "../assets/Phong.fragmentshader.glsl";
+    string filenameInit = "teapot1", vsNameInit = "Phong.vertexshader", fsNameInit = "Phong.fragmentshader";
+    glm::float32 shininessInit = 0.5, customPropertyInit = 0.5;
+    glm::vec3 lightPosInit = glm::vec3(0,0,0), lightColorInit = glm::vec3(1,1,1);
+    glm::float32 lightIntensityInit = 1.0;
+    glm::vec3 diffuseColorInit = glm::vec3(1, 0, 0), ambientColorInit = glm::vec3(0.1, 0.1, 0.1) * diffuseColorInit, specularColorInit = glm::vec3(0.3, 0.3, 0.3);
+    glm::float32 diffuseIntensityInit = 1.0, ambientIntensityInit = 0.1, specularIntensityInit = 0.3;
     
 };
 

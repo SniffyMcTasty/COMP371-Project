@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Shader Viewer</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Put head title as header -->
+    <h1 style="font-size: 5.0em">Shader Viewer <sub>by <a href="https://github.com/SniffyMcTasty/COMP371-Project">Alexandre Vallières</a></sub></h1>
+    <h1 style="text-align: center">Main Goal</h1>
+    <p>
+        This project is aimed at allowing a user to visualize the properties of shaders and objects, including their own.
+        The user will be able to select a shader and an object, and the program will display the result.
+        Another part of the UI allows for changing the shininess and one other custom property of the object, as long as the user enables them as uniforms inside their own shaders
+        As a stretch goal, the possibility of modifying the light and color properties has been implemented just as with the shininess and custom property.
+        The program also allows the user to rotate the object, as well as to zoom in and out.
+        Every property window has a reset button to reset all the properties inside of it as they were when first booting the program.<br>
+        <br>
+        The base code used came from Tiberiu Popa's <a href="https://github.com/tiperiu/COMP371_all/tree/313f6fc0d026d7274f2f98a053728dadad7c42bf/Lab_capsules/capsule3">lab capsule 3</a>.
+        The base user interactions were modified to allow for the user to move the windows around and to resize them, as using the scroll wheel would otherwise
+        interact with both the windows and the object.
+        Rotating the object is now done only with by holding the right mouse button when dragging instead of any button on the mouse.
+    </p>
+    <video controls loop autoplay muted>
+        <source src="./videos/Demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2 class="left">Objective 1: <span class="objective">Create UI for user selection</span></h2>
+    <div class="flex-container">
+        <p class="left">
+            The UI is using the <i>ImGui</i> library to render windows on top of the original rendering.
+            The user can rescale the windows by pressing the <i>Ctrl</i> key while using the scroll wheel when aiming the cursor on the desired window,
+            as well as move the windows around by dragging them.
+            Attached to this objective was the implementation of a way for the user to modify the shininess and one custom property of the object.
+        </p>
+        <video controls loop autoplay muted>
+            <source src="./videos/UI.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <h2 class="right">Objective 2: <span class="objective">Create a metallic shader</span></h2>
+    <div class="flex-container">
+        <video controls loop autoplay muted>
+            <source src="./videos/MetalShader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="right">
+            The metallic shader uses the Cook-Torrence algorithm to calculate a metallic-like reflection on the object using Perlin noise to calculate the roughness.
+            The user can change the roughness of the object by using the <i>Custom Property</i> slider in the UI.
+            The mix of perlin noise and the Cook-Torrence algorithm allows for a more realistic reflection than just using the Cook-Torrence algorithm alone.
+            It also gives an effect of granularity to the object, which is more realistic than a smooth reflection and this is the custom property that the slider changes.<br>
+            <br>
+            This shader only consists of a fragment shader, as only the metallic-like reflection was added.
+            This means it can be used in conjunction with any other compatible vertex shader to create mixed effects.
+            The problem with the Cook-Torrence algorithm is that it is very expensive to compute, which is why it is only used in the fragment shader.
+            There is also the fact that it is only used on specular reflections, which means that there is no actual texture and the effect produced
+            cannot be seen without looking at the light reflection.
+        </p>
+    </div>
+    <h2 class="left">Objective 3: <span class="objective">Create a toon shader</span></h2>
+    <div class="flex-container">
+        <p class="left">
+            The toon shader uses a custom stepping function to distort the normal of the object, which gives it a cartoon-like appearance.
+            The user can use the shininess slider to change the value of each step in the function, which changes the appearance of the light.
+            There is no specular lighting in this shader, as it is not needed to create the cartoon-like effect.
+            It is also only using a fragment shader, as the effect is only visible on the diffuse lighting.
+            Finally, it does not have any custom property to change as the effect is not complex enough to warrant one.
+        </p>
+        <video controls loop autoplay muted>
+            <source src="./videos/ToonShader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <h2 class="right">Objective 4: <span class="objective">Create a balloon shader</span></h2>
+    <div class="flex-container">
+        <video controls loop autoplay muted>
+            <source src="./videos/BalloonShader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="right">
+            The balloon shader uses a custom function to distort the position of the object based on its normal, which gives it a balloon-like appearance.
+            As per usual, the user can use the shininess slider to change the value of each step in the function, which changes the appearance of the light.
+            The <i>Custom Property</i> slider can be used to change the amount of distortion applied to the object, which changes its inflation.
+            The balloon shader is also only using a vertex shader, as the effect is only applied to the vertices' position.
+        </p>
+    </div>
+    <h2 class="left">Objective 5: <span class="objective">Allow user to load custom shaders and objects</span></h2>
+    <div class="flex-container">
+        <p class="left">
+            The user can load custom shaders and objects by using the <i>Browse</i> button in the corresponding UI window.
+            This button opens a file explorer window, which allows the user to select a vertex shader or object, followed by fragment shader.
+            It is very important that the shaders be identified as <i>*.vertexshader.glsl</i> and <i>*.fragmentshader.glsl</i> respectively,
+            while objects must be identified as <i>*.obj</i>.
+            The custom shaders and objects are loaded at runtime, which means that the user can add new shaders and objects without having to restart the program.
+        </p>
+        <video controls loop autoplay muted>
+            <source src="./videos/CustomShadersAndObjects.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <h1 style="text-align: center">Bonus Objective!</h1>
+    <h2>Allow user to modify light and color properties</h2>
+    <p>
+        The user can modify the light and color properties using the sliders or the color selectors.
+        For the light, its intensity, and position can be changed with sliders, while its color can be changed with a color selector.
+        The position sliders for the light represent its X, Y, and Z coordinates from left to right respectively.
+        The ambient, diffuse, and specular colors can also be changed with color selectors, while their intensities can be decided with sliders.
+        This objective was added as a bonus to help the user visualize even more how their objects would react to the shaders
+        and how the shaders would react to changes to the light.
+    </p>
+    <video controls loop autoplay muted>
+        <source src="./videos/LightAndColor.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>

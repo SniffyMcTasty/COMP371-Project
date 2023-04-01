@@ -243,7 +243,7 @@ namespace TAPP {
             glfwGetFramebufferSize(m_window.m_window, &m_window.m_width, &m_window.m_height);
             glViewport(0, 0, m_window.m_width, m_window.m_height);
             glfwSwapBuffers(m_window.m_window);
-            
+
         } // Check if the ESC key was pressed or the window was closed
         while (glfwGetKey(m_window.m_window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
                glfwWindowShouldClose(m_window.m_window) == 0);

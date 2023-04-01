@@ -1,0 +1,75 @@
+body {
+    background-image: linear-gradient( 132.6deg,  rgba(71,139,214,1) 23.3%, rgba(37,216,211,1) 84.7% );
+    color: #404040;
+    margin: 2%;
+}
+
+h1 sub {
+    font-size: 0.2em;
+    vertical-align: baseline;
+}
+
+/* Make a text style called objective that has the same style as h3 but with h4 size */
+.objective {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Make h2 centered */
+h2 {
+    text-align: center;
+}
+
+h2.left {
+    position: relative;
+    left: 0;
+    top: 0;
+    text-align: left;
+}
+
+h2.right {
+    position: relative;
+    left: 0;
+    top: 0;
+    text-align: right;
+}
+
+
+/* Justify p and center last line */
+p {
+    text-align: justify;
+    text-align-last: center;
+}
+
+p.left {
+    text-align-last: left;
+    width: 58%;
+    margin-top: unset;
+}
+
+p.right {
+    text-align-last: left;
+    width: 58%;
+    margin-top: unset;
+}
+
+video {
+    display: block;
+    margin: auto;
+    width: 40%;
+    height: auto;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 2%;
+    width: 100%;
+}
+
+.flex-container > video {
+    margin: 0;
+}
